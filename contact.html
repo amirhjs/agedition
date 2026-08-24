@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="fa">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+    <title>AGEDITION | ارتباط با ما و پشتیبانی تلگرام</title>
+    <meta name="description" content="ارتباط مستقیم با تیم پشتیبانی AGEDITION، ثبت سفارش در تلگرام و رفع اشکال آموزش‌های ادیشن Dream League Soccer 2019"/>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css"/>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-container": "#00b968",
+                        "secondary-fixed": "#8bf9b4",
+                        "surface-variant": "#2f3731",
+                        "outline-variant": "#3d4a3f",
+                        "on-secondary-container": "#003119",
+                        "tertiary": "#35e286",
+                        "obsidian-deep": "#020504",
+                        "secondary-fixed-dim": "#6edc9a",
+                        "on-tertiary-fixed": "#00210e",
+                        "on-secondary": "#00391e",
+                        "on-secondary-fixed-variant": "#00522e",
+                        "on-tertiary-container": "#004121",
+                        "primary": "#50e08a",
+                        "on-primary-fixed": "#00210e",
+                        "on-background": "#dde5dc",
+                        "text-muted": "#6F7C74",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#09100b",
+                        "on-primary": "#00391b",
+                        "secondary-container": "#31a467",
+                        "primary-container": "#16b968",
+                        "tertiary-fixed-dim": "#35e286",
+                        "background": "#0e1510",
+                        "forest-mute": "#0D2116",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#333b35",
+                        "surface-container-low": "#161d18",
+                        "text-primary": "#FFFFFF",
+                        "on-primary-container": "#004220",
+                        "surface": "#0e1510",
+                        "surface-container-high": "#242c26",
+                        "inverse-surface": "#dde5dc",
+                        "on-secondary-fixed": "#00210f",
+                        "obsidian-surface": "#08120C",
+                        "surface-container-highest": "#2f3731",
+                        "primary-fixed": "#70fda4",
+                        "on-surface": "#dde5dc",
+                        "surface-tint": "#50e08a",
+                        "inverse-primary": "#006d3a",
+                        "secondary": "#6edc9a",
+                        "inverse-on-surface": "#2b322d",
+                        "on-primary-fixed-variant": "#00522a",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#bccabc",
+                        "text-secondary": "#A9B5AE",
+                        "tertiary-fixed": "#5cffa0",
+                        "on-tertiary": "#00391c",
+                        "surface-dim": "#0e1510",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#00522b",
+                        "outline": "#869487",
+                        "primary-fixed-dim": "#50e08a",
+                        "surface-container": "#1a211c"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "40px",
+                        "unit": "8px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen pb-28 pt-20 relative overflow-x-hidden bg-background text-text-primary selection:bg-primary selection:text-on-primary">
+    <!-- Atmospheric Glow -->
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-bottom"></div>
+
+    <!-- Top App Bar -->
+    <header class="fixed top-0 w-full z-50 bg-obsidian-surface/80 backdrop-blur-xl border-b border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+        <div class="flex justify-between items-center px-margin-mobile h-16 max-w-container-max mx-auto">
+            <button aria-label="Open Menu" id="menu-btn" class="text-on-surface-variant hover:text-primary hover:bg-white/5 active:scale-95 transition-transform p-2 rounded-full min-h-interactive flex items-center justify-center">
+                <span class="material-symbols-outlined text-[26px]">menu</span>
+            </button>
+            <a href="index.html" class="font-black text-2xl tracking-tight text-white">AGED<span class="text-primary">i</span>TION</a>
+            <a href="products.html" class="btn-primary py-2 px-4 rounded-full text-xs flex items-center gap-1">
+                <span>خرید دوره</span>
+                <span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Navigation Drawer -->
+    <nav id="nav-drawer" class="fixed inset-y-0 right-0 z-[60] bg-obsidian-deep/90 backdrop-blur-[32px] border-l border-white/10 shadow-2xl flex flex-col p-6 w-3/4 max-w-xs justify-between">
+        <div>
+            <div class="flex justify-between items-center mb-8 pb-4 border-b border-white/10">
+                <div class="text-xl font-bold tracking-tight text-white">AGED<span class="text-primary">i</span>TION</div>
+                <button id="close-menu-btn" aria-label="Close Menu" class="text-on-surface-variant hover:text-white p-2 rounded-full active:scale-95 transition-transform">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            
+            <div class="flex flex-col gap-2">
+                <a href="index.html" data-page="index.html" class="flex items-center gap-4 py-3.5 px-4 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-xl transition-all duration-300">
+                    <span class="material-symbols-outlined">home</span>
+                    <span class="font-medium text-sm">صفحه اصلی (Home)</span>
+                </a>
+                <a href="products.html" data-page="products.html" class="flex items-center gap-4 py-3.5 px-4 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-xl transition-all duration-300">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <span class="font-medium text-sm">ثبت نام و خرید دوره (Course)</span>
+                </a>
+                <a href="about.html" data-page="about.html" class="flex items-center gap-4 py-3.5 px-4 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-xl transition-all duration-300">
+                    <span class="material-symbols-outlined">info</span>
+                    <span class="font-medium text-sm">درباره دوره و سرفصل‌ها (About)</span>
+                </a>
+                <a href="dashboard.html" data-page="dashboard.html" class="flex items-center gap-4 py-3.5 px-4 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-xl transition-all duration-300">
+                    <span class="material-symbols-outlined">person</span>
+                    <span class="font-medium text-sm">پنل کاربری و دانلود پکیج (Account)</span>
+                </a>
+                <a href="contact.html" data-page="contact.html" class="flex items-center gap-4 py-3.5 px-4 bg-primary-container/20 text-primary rounded-xl transition-all duration-300">
+                    <span class="material-symbols-outlined fill-1">support_agent</span>
+                    <span class="font-medium text-sm">پشتیبانی تلگرام و تماس (Support)</span>
+                </a>
+                <a href="admin.html" data-page="admin.html" class="flex items-center gap-4 py-3.5 px-4 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-xl transition-all duration-300">
+                    <span class="material-symbols-outlined">admin_panel_settings</span>
+                    <span class="font-medium text-sm">پنل مدیریت رسیدها (Admin)</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-4">
+            <button onclick="openTelegramOrder()" class="btn-telegram w-full py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-sm">
+                <span class="material-symbols-outlined text-[20px]">send</span>
+                <span>پشتیبانی تلگرام</span>
+            </button>
+        </div>
+    </nav>
+    <div id="drawer-overlay" class="fixed inset-0 bg-black/60 z-50 hidden transition-opacity duration-300"></div>
+
+    <!-- Main Content Area -->
+    <main class="relative z-10 px-margin-mobile max-w-container-max mx-auto flex flex-col gap-8 mt-6 md:mt-10">
+        
+        <!-- Header -->
+        <section class="text-center max-w-xl mx-auto">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-3">
+                <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                <span>پاسخگویی فعال و آنلاین در تلگرام</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-black text-text-primary tracking-tight">ارتباط و پشتیبانی سریع</h1>
+            <p class="text-sm text-text-secondary mt-2 leading-relaxed">
+                سوالی درباره دوره، پکیج ابزارها یا ثبت سفارش دارید؟ از راه‌های ارتباطی زیر با ما در ارتباط باشید.
+            </p>
+        </section>
+
+        <!-- Direct Contact Methods Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Telegram Direct Admin -->
+            <div class="glass-card rounded-2xl p-6 border border-primary/30 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-4 border border-sky-500/30">
+                        <span class="material-symbols-outlined text-3xl">send</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">آیدی پشتیبان تلگرام</h3>
+                    <p class="text-xs text-text-muted mb-4 font-mono text-left" dir="ltr">@AgeditionAdmin</p>
+                    <p class="text-xs text-text-secondary leading-relaxed">
+                        مشاوره قبل از خرید، ارسال دستی فیش واریزی و پشتیبانی آنلاین فنی دوره.
+                    </p>
+                </div>
+                <a href="https://t.me/AgeditionAdmin" target="_blank" class="btn-telegram w-full py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 mt-6">
+                    <span class="material-symbols-outlined text-[16px]">chat</span>
+                    <span>شروع گفتگو در تلگرام</span>
+                </a>
+            </div>
+
+            <!-- Telegram Channel -->
+            <div class="glass-card rounded-2xl p-6 border border-white/10 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-primary/20 text-primary flex items-center justify-center mb-4 border border-primary/30">
+                        <span class="material-symbols-outlined text-3xl">campaign</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">کانال رسمی AGEDITION</h3>
+                    <p class="text-xs text-text-muted mb-4 font-mono text-left" dir="ltr">@Agedition_Official</p>
+                    <p class="text-xs text-text-secondary leading-relaxed">
+                        اطلاع‌رسانی آپدیت‌های پکیج، پیش‌نمایش ادیشن‌های جدید و کیت‌های فصل.
+                    </p>
+                </div>
+                <a href="https://t.me/AgeditionAdmin" target="_blank" class="btn-secondary w-full py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 mt-6">
+                    <span class="material-symbols-outlined text-[16px]">groups</span>
+                    <span>عضویت در کانال تلگرام</span>
+                </a>
+            </div>
+
+            <!-- Email & Direct Message -->
+            <div class="glass-card rounded-2xl p-6 border border-white/10 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-tertiary/20 text-tertiary flex items-center justify-center mb-4 border border-tertiary/30">
+                        <span class="material-symbols-outlined text-3xl">mail</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">پست الکترونیک</h3>
+                    <p class="text-xs text-text-muted mb-4 font-mono text-left" dir="ltr">support@agedition.ir</p>
+                    <p class="text-xs text-text-secondary leading-relaxed">
+                        برای درخواست‌های همکاری، پیشنهادات و پیام‌های متنی رسمی.
+                    </p>
+                </div>
+                <a href="mailto:support@agedition.ir" class="btn-secondary w-full py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 mt-6">
+                    <span class="material-symbols-outlined text-[16px]">mail</span>
+                    <span>ارسال ایمیل</span>
+                </a>
+            </div>
+
+        </section>
+
+        <!-- Message Submission Form -->
+        <section class="glass-panel rounded-3xl p-6 sm:p-8 max-w-2xl mx-auto w-full border border-white/10 shadow-2xl">
+            <h2 class="text-xl font-bold text-text-primary mb-2 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">edit_note</span>
+                <span>فرم ارسال پیام یا سوال سریع</span>
+            </h2>
+            <p class="text-xs text-text-muted mb-6">
+                پیام شما به پشتیبان ارسال می‌شود و در کمتر از ۲ ساعت پاسخ داده خواهد شد.
+            </p>
+
+            <form onsubmit="event.preventDefault(); submitContactForm();" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-xs font-medium text-text-secondary">نام شما</label>
+                        <input id="contact-name" class="glass-input w-full rounded-xl px-4 py-3 text-sm text-white" placeholder="مثال: رضا محمدی" required type="text"/>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs font-medium text-text-secondary">شماره تماس یا آیدی تلگرام</label>
+                        <input id="contact-handle" class="glass-input w-full rounded-xl px-4 py-3 text-sm text-white text-right" dir="ltr" placeholder="@YourID یا 0912..." required type="text"/>
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs font-medium text-text-secondary">موضوع پیام</label>
+                    <select id="contact-subject" class="glass-input w-full rounded-xl px-4 py-3 text-sm text-white bg-obsidian-deep">
+                        <option value="buy">سوال در مورد خرید دوره و پکیج</option>
+                        <option value="support">پشتیبانی فنی و رفع باگ ادیشن</option>
+                        <option value="suggestion">پیشنهاد ادیشن جدید یا کیت خاص</option>
+                        <option value="other">سایر موارد</option>
+                    </select>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs font-medium text-text-secondary">متن پیام</label>
+                    <textarea id="contact-message" class="glass-input w-full rounded-xl p-4 text-sm text-white h-28 resize-none" placeholder="توضیحات خود را اینجا بنویسید..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary w-full py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-[18px]">send</span>
+                    <span>ارسال پیام</span>
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full relative bg-obsidian-surface/90 backdrop-blur-lg border-t border-white/10 flex flex-col items-center gap-4 py-8 px-margin-mobile mt-16 z-10">
+        <div class="text-2xl font-black text-white tracking-tight">AGED<span class="text-primary">i</span>TION</div>
+        <div class="flex gap-6 text-xs text-text-muted">
+            <a class="hover:text-primary transition-colors" href="index.html">صفحه اصلی</a>
+            <a class="hover:text-primary transition-colors" href="products.html">خرید دوره</a>
+            <a class="hover:text-primary transition-colors" href="about.html">درباره دوره</a>
+            <a class="hover:text-primary transition-colors" href="dashboard.html">داشبورد کاربری</a>
+        </div>
+        <div class="text-xs text-text-muted">© 2024 AGEDITION. تمامی حقوق محفوظ است.</div>
+    </footer>
+
+    <!-- Contact Form Logic -->
+    <script>
+        function submitContactForm() {
+            const name = document.getElementById('contact-name').value;
+            const handle = document.getElementById('contact-handle').value;
+            const msg = document.getElementById('contact-message').value;
+
+            showToast('پیام شما با موفقیت ثبت شد. به زودی در تلگرام با شما ارتباط خواهیم گرفت.', 'success', 4000);
+            
+            // Offer to also send in Telegram directly
+            setTimeout(() => {
+                const sendTg = confirm('آیا می‌خواهید همین پیام را مستقیماً در تلگرام برای ادمین ارسال کنید؟');
+                if (sendTg) {
+                    const text = encodeURIComponent(`پیام از سایت AGEDITION:\nنام: ${name}\nتماس: ${handle}\nمتن: ${msg}`);
+                    window.open(`https://t.me/AgeditionAdmin?text=${text}`, '_blank');
+                }
+            }, 1000);
+        }
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
