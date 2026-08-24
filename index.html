@@ -1,327 +1,345 @@
 <!DOCTYPE html>
 <html class="dark" dir="rtl" lang="fa">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
-    <title>AGEDITION | پلتفرم آموزش تخصصی ادیشن Dream League Soccer 2019</title>
-    <meta name="description" content="در یک دوره کامل یاد بگیر چطور ظاهر Dream League Soccer 2019 رو شخصی‌سازی کنی و همراه دوره، به پکیج ابزارهای مورد نیازت هم دسترسی داشته باشی." />
-    
-    <!-- Tailwind CSS with configuration -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <title>AGEDITION | دوره کامل آموزش ساخت ادیشن DLS 2019 + پکیج ابزارها</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
 
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "tertiary-container": "#00b968",
-                        "secondary-fixed": "#8bf9b4",
-                        "surface-variant": "#2f3731",
-                        "outline-variant": "#3d4a3f",
-                        "on-secondary-container": "#003119",
-                        "tertiary": "#35e286",
-                        "obsidian-deep": "#020504",
-                        "secondary-fixed-dim": "#6edc9a",
-                        "on-tertiary-fixed": "#00210e",
-                        "on-secondary": "#00391e",
-                        "on-secondary-fixed-variant": "#00522e",
-                        "on-tertiary-container": "#004121",
-                        "primary": "#50e08a",
-                        "on-primary-fixed": "#00210e",
-                        "on-background": "#dde5dc",
-                        "text-muted": "#6F7C74",
-                        "error": "#ffb4ab",
-                        "surface-container-lowest": "#09100b",
-                        "on-primary": "#00391b",
-                        "secondary-container": "#31a467",
-                        "primary-container": "#16b968",
-                        "tertiary-fixed-dim": "#35e286",
-                        "background": "#0e1510",
-                        "forest-mute": "#0D2116",
-                        "on-error-container": "#ffdad6",
-                        "surface-bright": "#333b35",
-                        "surface-container-low": "#161d18",
-                        "text-primary": "#FFFFFF",
-                        "on-primary-container": "#004220",
-                        "surface": "#0e1510",
-                        "surface-container-high": "#242c26",
-                        "inverse-surface": "#dde5dc",
-                        "on-secondary-fixed": "#00210f",
-                        "obsidian-surface": "#08120C",
-                        "surface-container-highest": "#2f3731",
-                        "primary-fixed": "#70fda4",
-                        "on-surface": "#dde5dc",
-                        "surface-tint": "#50e08a",
-                        "inverse-primary": "#006d3a",
-                        "secondary": "#6edc9a",
-                        "inverse-on-surface": "#2b322d",
-                        "on-primary-fixed-variant": "#00522a",
-                        "error-container": "#93000a",
-                        "on-surface-variant": "#bccabc",
-                        "text-secondary": "#A9B5AE",
-                        "tertiary-fixed": "#5cffa0",
-                        "on-tertiary": "#00391c",
-                        "surface-dim": "#0e1510",
-                        "on-error": "#690005",
-                        "on-tertiary-fixed-variant": "#00522b",
-                        "outline": "#869487",
-                        "primary-fixed-dim": "#50e08a",
-                        "surface-container": "#1a211c"
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    spacing: {
-                        "margin-desktop": "40px",
-                        "unit": "8px",
-                        "container-max": "1200px",
-                        "gutter": "24px",
-                        "margin-mobile": "16px"
-                    }
-                }
-            }
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#08080a",
+            "obsidian-deep": "#040406",
+            "obsidian-surface": "#0e0e12",
+            "primary": "#10b981",
+            "primary-container": "#059669",
+            "primary-fixed": "#6ee7b7",
+            "secondary": "#34d399",
+            "secondary-container": "#047857",
+            "tertiary": "#10b981",
+            "tertiary-container": "#065f46",
+            "on-background": "#f1f5f9",
+            "text-primary": "#FFFFFF",
+            "text-secondary": "#94a3b8",
+            "text-muted": "#64748b",
+            "error": "#f87171",
+            "error-container": "#7f1d1d",
+            "surface": "#0e0e12",
+            "surface-bright": "#1e293b",
+            "surface-container-lowest": "#040406",
+            "surface-container-low": "#0b0f14",
+            "surface-container": "#111827",
+            "surface-container-high": "#1f2937",
+            "surface-container-highest": "#374151",
+            "surface-variant": "#1e293b",
+            "on-surface": "#f1f5f9",
+            "on-surface-variant": "#94a3b8",
+            "outline": "rgba(255, 255, 255, 0.1)",
+            "outline-variant": "rgba(255, 255, 255, 0.06)",
+            "on-primary": "#000000",
+            "on-primary-fixed": "#000000"
+          },
+          fontFamily: {
+            sans: ["Vazirmatn", "sans-serif"],
+          }
         }
-    </script>
+      }
+    }
+  </script>
 </head>
-<body class="relative min-h-screen font-body-md text-on-background selection:bg-primary selection:text-on-primary">
-    <!-- Atmospheric Ambient Glows -->
-    <div class="ambient-glow"></div>
-    <div class="ambient-glow-bottom"></div>
+<body class="relative min-h-screen bg-background text-on-background selection:bg-primary selection:text-on-primary">
+  <div class="ambient-glow"></div>
+  <div class="ambient-glow-bottom"></div>
 
-    <!-- Top App Bar -->
-    <header class="fixed top-0 w-full z-50 bg-obsidian-surface/80 backdrop-blur-xl border-b border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
-        <div class="flex justify-between items-center px-margin-mobile h-16 max-w-container-max mx-auto">
-            <!-- Mobile Menu Toggle Button -->
-            <button aria-label="Open Menu" id="menu-btn" class="text-on-surface-variant hover:text-primary hover:bg-white/5 p-2 rounded-full active:scale-95 transition-all min-h-interactive flex items-center justify-center">
-                <span class="material-symbols-outlined text-[26px]">menu</span>
-            </button>
+  <!-- TopAppBar -->
+  <header class="fixed top-0 w-full z-50 bg-obsidian-surface/70 backdrop-blur-xl border-b border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+    <div class="flex justify-between items-center px-4 sm:px-8 h-16 max-w-6xl mx-auto">
+      <button aria-label="Open Menu" class="text-on-surface-variant hover:bg-white/5 p-2 rounded-full active:scale-95 transition-transform" id="menu-btn">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="text-xl sm:text-2xl font-bold tracking-tight text-primary font-headline-md">AGEDITION</span>
+      </a>
 
-            <!-- Brand Logo -->
-            <a href="index.html" class="flex items-center gap-1 group">
-                <span class="text-2xl font-black tracking-tight text-white group-hover:text-primary transition-colors">AGED<span class="text-primary">i</span>TION</span>
-            </a>
+      <div class="flex items-center gap-1 sm:gap-2">
+        <a href="admin.html" id="header-admin-badge" class="hidden text-xs bg-primary/20 text-primary border border-primary/30 px-2.5 py-1 rounded-full font-medium hover:bg-primary/30 transition-colors">
+          پنل مدیریت
+        </a>
+        <button aria-label="Notifications" id="notif-btn" class="relative text-on-surface-variant hover:bg-white/5 p-2 rounded-full active:scale-95 transition-transform">
+          <span class="material-symbols-outlined">notifications</span>
+          <span id="notif-badge" class="hidden absolute top-1 right-1 w-4 h-4 bg-error text-[10px] text-obsidian-deep font-bold rounded-full flex items-center justify-center">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-            <!-- Notification & Quick Action -->
-            <div class="flex items-center gap-2">
-                <button data-notif-btn aria-label="Notifications" class="text-on-surface-variant hover:text-primary hover:bg-white/5 p-2 rounded-full active:scale-95 transition-all min-h-interactive flex items-center justify-center relative">
-                    <span class="material-symbols-outlined text-[24px]">notifications</span>
-                    <span class="absolute top-2 left-2 w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-                </button>
-                <a href="products.html" class="hidden sm:flex btn-primary py-2 px-4 rounded-full text-xs items-center gap-1">
-                    <span>ثبت نام و خرید</span>
-                    <span class="material-symbols-outlined text-[16px]">arrow_back</span>
-                </a>
-            </div>
+  <!-- Navigation Drawer (Mobile) -->
+  <nav class="fixed inset-y-0 right-0 z-[60] bg-obsidian-deep/90 backdrop-blur-[30px] border-l border-white/10 shadow-2xl flex flex-col p-6 w-72 max-w-full" id="nav-drawer" style="transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+    <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
+      <div class="text-xl font-bold text-primary">AGEDITION</div>
+      <button aria-label="Close Menu" class="text-on-surface-variant hover:bg-white/5 p-2 rounded-full active:scale-95 transition-transform" id="close-menu-btn">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    
+    <div class="flex flex-col gap-2 flex-1">
+      <a class="nav-item text-primary flex items-center gap-4 py-3.5 px-4 bg-primary-container/20 rounded-xl transition-all" href="index.html">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+        <span class="font-medium text-sm">صفحه اصلی</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-4 py-3.5 px-4 hover:text-primary hover:bg-white/5 rounded-xl transition-all" href="course.html">
+        <span class="material-symbols-outlined">school</span>
+        <span class="font-medium text-sm">معرفی دوره</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-4 py-3.5 px-4 hover:text-primary hover:bg-white/5 rounded-xl transition-all" href="register.html">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <span class="font-medium text-sm">خرید و ثبت‌نام</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-4 py-3.5 px-4 hover:text-primary hover:bg-white/5 rounded-xl transition-all" href="dashboard.html">
+        <span class="material-symbols-outlined">person</span>
+        <span class="font-medium text-sm">داشبورد کاربری</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-4 py-3.5 px-4 hover:text-primary hover:bg-white/5 rounded-xl transition-all" href="support.html">
+        <span class="material-symbols-outlined">help</span>
+        <span class="font-medium text-sm">پشتیبانی و پیام‌ها</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-4 py-3.5 px-4 hover:text-primary hover:bg-white/5 rounded-xl transition-all" href="admin.html">
+        <span class="material-symbols-outlined">admin_panel_settings</span>
+        <span class="font-medium text-sm">ورود مدیریت</span>
+      </a>
+    </div>
+
+    <div class="mt-auto pt-4 border-t border-white/10 text-center text-xs text-[#6F7C74]">
+      AGEDITION • نسخه اختصاصی ۲۰۲۴
+    </div>
+  </nav>
+  <div class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm" id="drawer-overlay"></div>
+
+  <!-- Main Container -->
+  <main class="pt-24 pb-28 px-4 max-w-4xl mx-auto flex flex-col gap-12 relative z-10">
+    
+    <!-- Hero Section (Exact Stitch Replica) -->
+    <section class="flex flex-col items-center text-center gap-6 mt-4 relative">
+      <!-- Phone Mockup Preview -->
+      <div class="relative w-full aspect-[4/5] max-w-sm mx-auto rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-[0_25px_50px_rgba(0,0,0,0.6)] group">
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-deep via-transparent to-transparent z-10 opacity-70"></div>
+        <img 
+          class="w-full h-full object-cover relative z-0 transition-transform duration-700 group-hover:scale-105" 
+          alt="DLS 2019 Edition Preview" 
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB6slgWfT3ba_rW611rGjH-T2P3czeXO8vExixjK08I4IDAEcxAcrDXFLyw9BB-t-ujszeFrspUNp8pwMixRl00jLoMtHUtqU69l5lfyfKXEmnXpFaji02Ci3a-rxxvwLQd8aIDn0jjcYl1R1sHxkM4RInNXnBPuIISBd-PT5GbAhVauW4poXjPzDclONVh-tydtvkhT-ZTuO3PtyzgCurzc1RIYB5lbFeHvtnPVGlZTuhhGd_RldT6w"
+        />
+        <div class="absolute bottom-4 right-4 left-4 z-20 flex justify-between items-center text-xs bg-black/60 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/10">
+          <span class="text-secondary flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">verified</span>
+            پکیج ابزارهای کامل
+          </span>
+          <span class="text-primary font-bold">ویدیو ۱ ساعته</span>
         </div>
-    </header>
+      </div>
 
-    <!-- Navigation Drawer (Side Menu) -->
-    <nav id="nav-drawer" class="fixed inset-y-0 right-0 z-[60] bg-obsidian-deep/90 backdrop-blur-[32px] border-l border-white/10 shadow-2xl flex flex-col p-6 w-3/4 max-w-xs justify-between">
-        <div>
-            <div class="flex justify-between items-center mb-8 pb-4 border-b border-white/10">
-                <div class="text-xl font-bold tracking-tight text-white">AGED<span class="text-primary">i</span>TION</div>
-                <button id="close-menu-btn" aria-label="Close Menu" class="text-on-surface-variant hover:text-white p-2 rounded-full active:scale-95 transition-transform">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-            </div>
-            
-            <div class="flex flex-col gap-2">
-                <a href="index.html" data-page="index.html" class="flex items-center gap-4 py-3.5 px-4 bg-primary-container/20 text-primary rounded-xl transition-all duration-300">
-                    <span class="material-symbols-outlined fill-1">home</span>
-                    <span class="font-medium text-sm">صفحه اصلی (Home)</span>
-                </a>
-                <a href="products.html" data-page="products.html" class="flex items-center gap-4 py-3.5 px-4 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-xl transition-all duration-300">
-                    <span class="material-symbols-outlined">shopping_cart</span>
-                    <span class="font-medium text-sm">ثبت نام و خرید دوره (Course)</span>
-                </a>
-                <a href="about.html" data-page="about.html" class="flex items-center gap-4 py-3.5 px-4 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-xl transition-all duration-300">
-                    <span class="material-symbols-outlined">info</span>
-                    <span class="font-medium text-sm">درباره دوره و سرفصل‌ها (About)</span>
-                </a>
-                <a href="dashboard.html" data-page="dashboard.html" class="flex items-center gap-4 py-3.5 px-4 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-xl transition-all duration-300">
-                    <span class="material-symbols-outlined">person</span>
-                    <span class="font-medium text-sm">پنل کاربری و دانلود پکیج (Account)</span>
-                </a>
-                <a href="contact.html" data-page="contact.html" class="flex items-center gap-4 py-3.5 px-4 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-xl transition-all duration-300">
-                    <span class="material-symbols-outlined">support_agent</span>
-                    <span class="font-medium text-sm">پشتیبانی تلگرام و تماس (Support)</span>
-                </a>
-                <a href="admin.html" data-page="admin.html" class="flex items-center gap-4 py-3.5 px-4 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-xl transition-all duration-300">
-                    <span class="material-symbols-outlined">admin_panel_settings</span>
-                    <span class="font-medium text-sm">پنل مدیریت رسیدها (Admin)</span>
-                </a>
-            </div>
+      <!-- Headline & Description -->
+      <div class="flex flex-col gap-3 z-20 max-w-lg mx-auto">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          ادیشن خودت رو بساز
+        </h1>
+        <p class="text-base sm:text-lg text-text-secondary leading-relaxed px-2">
+          در یک دوره کامل یاد بگیر چطور ظاهر Dream League Soccer 2019 رو شخصی‌سازی کنی و همراه دوره، به پکیج ابزارهای مورد نیازت هم دسترسی داشته باشی.
+        </p>
+        <div class="text-2xl sm:text-3xl font-extrabold text-primary mt-1 tracking-tight" id="hero-price">
+          ۴۰۰,۰۰۰ تومان
         </div>
+      </div>
 
-        <div class="border-t border-white/10 pt-4">
-            <button onclick="openTelegramOrder()" class="btn-telegram w-full py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-sm">
-                <span class="material-symbols-outlined text-[20px]">send</span>
-                <span>سفارش سریع در تلگرام</span>
-            </button>
-            <p class="text-[11px] text-text-muted text-center mt-3">AGEDITION • نسخه 2024</p>
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row w-full gap-3.5 mt-2 max-w-sm">
+        <a href="register.html" class="btn-primary w-full h-13 py-3.5 rounded-full font-semibold text-on-primary-fixed flex items-center justify-center gap-2 active:scale-95 transition-all text-base shadow-lg shadow-primary/20">
+          <span>خرید دوره</span>
+          <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+        </a>
+        <a href="course.html" class="btn-secondary w-full h-13 py-3.5 rounded-full font-medium text-text-primary flex items-center justify-center gap-2 active:scale-95 transition-all text-base">
+          <span>درباره دوره</span>
+          <span class="material-symbols-outlined text-[20px]">info</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Product Details Grid (What You Get) -->
+    <section class="glass-panel rounded-2xl p-6 sm:p-8 mt-4 border border-white/10">
+      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+        <div class="flex items-center gap-3">
+          <span class="p-2 bg-primary/10 rounded-xl text-primary material-symbols-outlined">inventory_2</span>
+          <h2 class="text-xl font-bold text-white">محتویات محصول AGEDITION</h2>
         </div>
-    </nav>
-    <div id="drawer-overlay" class="fixed inset-0 bg-black/60 z-50 hidden transition-opacity duration-300"></div>
+        <span class="text-xs bg-primary/15 text-primary border border-primary/25 px-3 py-1 rounded-full">محصول یکپارچه</span>
+      </div>
 
-    <!-- Main Container -->
-    <main class="pt-24 pb-20 px-margin-mobile container mx-auto max-w-container-max flex flex-col gap-12 relative z-10">
-        
-        <!-- Hero Section (Matching Stitch Screen 1) -->
-        <section class="flex flex-col items-center text-center gap-6 mt-4 relative max-w-2xl mx-auto">
-            
-            <!-- Smartphone Display Mockup -->
-            <div class="relative w-full aspect-[4/5] max-w-[320px] sm:max-w-sm mx-auto mb-4 rounded-3xl overflow-hidden glass-panel shadow-[0_30px_60px_rgba(0,0,0,0.6)] border border-primary/20 animate-float">
-                <div class="absolute inset-0 bg-gradient-to-t from-obsidian-deep via-transparent to-transparent z-10"></div>
-                <img class="w-full h-full object-cover relative z-0" 
-                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB6slgWfT3ba_rW611rGjH-T2P3czeXO8vExixjK08I4IDAEcxAcrDXFLyw9BB-t-ujszeFrspUNp8pwMixRl00jLoMtHUtqU69l5lfyfKXEmnXpFaji02Ci3a-rxxvwLQd8aIDn0jjcYl1R1sHxkM4RInNXnBPuIISBd-PT5GbAhVauW4poXjPzDclONVh-tydtvkhT-ZTuO3PtyzgCurzc1RIYB5lbFeHvtnPVGlZTuhhGd_RldT6w" 
-                     alt="نمای بازی Dream League Soccer 2019 شخصی‌سازی شده در گوشی هوشمند" />
-                
-                <!-- Live Tag Badge -->
-                <div class="absolute top-4 right-4 z-20 bg-obsidian-deep/80 backdrop-blur-md border border-primary/30 text-primary px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-lg">
-                    <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
-                    <span>DLS 2019 EDITION</span>
-                </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Item 1: Complete Video -->
+        <div class="glass-card rounded-xl p-5 border border-white/5 flex flex-col justify-between">
+          <div class="flex items-start gap-3.5 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+              <span class="material-symbols-outlined text-[22px]">play_circle</span>
             </div>
-
-            <!-- Typography & Pricing Headline -->
-            <div class="flex flex-col gap-4 z-20">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-text-primary tracking-tight leading-tight">
-                    ادیشن خودت رو بساز
-                </h1>
-                
-                <p class="text-base sm:text-lg text-text-secondary max-w-xl mx-auto leading-relaxed">
-                    در یک دوره کامل یاد بگیر چطور ظاهر Dream League Soccer 2019 رو شخصی‌سازی کنی و همراه دوره، به پکیج ابزارهای مورد نیازت هم دسترسی داشته باشی.
-                </p>
-
-                <!-- Glowing Price Badge -->
-                <div class="text-2xl sm:text-3xl font-extrabold text-primary mt-2 drop-shadow-[0_0_15px_rgba(80,224,138,0.4)]">
-                    ۴۰۰,۰۰۰ <span class="text-base font-normal text-primary/80">تومان</span>
-                </div>
+            <div>
+              <h3 class="font-bold text-white text-base mb-1">ویدیوی کامل آموزشی (حدود ۱ ساعت)</h3>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                آموزش گام به گام و صفر تا صد ساخت ادیشن DLS 2019 بدون نیاز به پیش‌زمینه. تغییر تمامی فایل‌ها و تنظیمات.
+              </p>
             </div>
-
-            <!-- Action Buttons -->
-            <div class="flex flex-col sm:flex-row w-full gap-3 mt-4 max-w-md justify-center">
-                <a href="products.html" class="btn-primary w-full sm:w-1/2 h-14 rounded-full text-base flex items-center justify-center gap-2 active:scale-95 transition-all text-on-primary-fixed shadow-lg">
-                    <span>خرید دوره</span>
-                    <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
-                </a>
-                
-                <a href="about.html" class="btn-secondary w-full sm:w-1/2 h-14 rounded-full text-base flex items-center justify-center gap-2 active:scale-95 transition-all">
-                    <span>درباره دوره</span>
-                    <span class="material-symbols-outlined text-[20px]">info</span>
-                </a>
-            </div>
-
-            <!-- Fast Telegram Order Button -->
-            <button onclick="openTelegramOrder()" class="btn-telegram w-full max-w-md h-12 rounded-full text-sm flex items-center justify-center gap-2 mt-1 active:scale-95 transition-transform">
-                <span class="material-symbols-outlined text-[18px]">send</span>
-                <span>سفارش مستقیم و دریافت آنی در تلگرام</span>
-            </button>
-        </section>
-
-        <!-- Course Highlights Bento Grid -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
-                <div class="p-3 bg-primary/10 w-fit rounded-xl mb-4 border border-primary/20">
-                    <span class="material-symbols-outlined text-primary text-3xl">brush</span>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold text-text-primary mb-2">طراحی کیت و منوهای نئونی</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">
-                        آموزش طراحی کیت‌های فصل جدید، فونت‌های اختصاصی شماره پیراهن و تم‌های مدرن و تاریک منو.
-                    </p>
-                </div>
-            </div>
-
-            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
-                <div class="p-3 bg-secondary/10 w-fit rounded-xl mb-4 border border-secondary/20">
-                    <span class="material-symbols-outlined text-secondary text-3xl">folder_zip</span>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold text-text-primary mb-2">پکیج اختصاصی ابزارها</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">
-                        بیش از ۱.۲ گیگابایت ابزار ادیت، تکسچر چمن اچ‌دی، موزیک‌ها و فایل‌های آماده باز کردن تمام امکانات.
-                    </p>
-                </div>
-            </div>
-
-            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
-                <div class="p-3 bg-tertiary/10 w-fit rounded-xl mb-4 border border-tertiary/20">
-                    <span class="material-symbols-outlined text-tertiary text-3xl">headset_mic</span>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold text-text-primary mb-2">پشتیبانی اختصاصی تلگرام</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">
-                        رفع اشکال، پاسخ به سوالات حین ادیت و دریافت رایگان آپدیت‌های آینده در کانال VIP.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Video Preview Card -->
-        <section class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6 border border-white/10">
-            <div class="w-full md:w-1/2 aspect-video rounded-xl overflow-hidden relative group cursor-pointer border border-white/10" onclick="openVideoModal('پیش‌نمایش دوره ادیشن DLS 2019')">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFneTEQpKE2OQIaFJ9Az8k9ZDt2Ki97yI7qiPedUGU0kAuVcs6_03D24-Vr3U7shfGD6O0NKY85SrNG1n1GIbav51WkYJDM18RebY5FOK0hMzEGE3WaDIR-I6voyZLl_20XRorp1ZUCFS_M4zdcqnfvtYKHiGmUZmyqKYdSx4qCdygLx8jYCw8jd7dJjktb12LpxxZ4NX-8b9FkrCDp8NFVAymJqunoJSYIlLLMiPqZn9IhpbzlM2brw" 
-                     alt="ویدیو پیش‌نمایش دوره" />
-                <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
-                    <div class="w-14 h-14 rounded-full bg-primary/90 text-obsidian-deep flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-[32px] fill-1">play_arrow</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="w-full md:w-1/2 flex flex-col justify-between">
-                <div>
-                    <span class="text-xs text-primary font-bold tracking-wider uppercase">پیش‌نمایش ویدیویی</span>
-                    <h3 class="text-xl sm:text-2xl font-bold text-text-primary mt-1 mb-3">چه چیزی در دوره یاد می‌گیرید؟</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed mb-6">
-                        از استخراج دیتای بازی گرفته تا قرار دادن گزارشگر سفارشی، اصلاح چمن و استادیوم، طراحی کارت‌های بازیکنان و خروجی نهایی فایل APK بدون نیاز به روت گوشی.
-                    </p>
-                </div>
-                <div class="flex items-center gap-4">
-                    <button onclick="openVideoModal('پیش‌نمایش دوره ادیشن DLS 2019')" class="btn-primary py-3 px-6 rounded-xl text-sm flex items-center gap-2">
-                        <span class="material-symbols-outlined text-[18px]">play_circle</span>
-                        <span>تماشای ویدیو</span>
-                    </button>
-                    <a href="about.html" class="text-sm text-text-secondary hover:text-primary transition-colors flex items-center gap-1">
-                        <span>مشاهده سرفصل‌ها</span>
-                        <span class="material-symbols-outlined text-[16px]">chevron_left</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer (Shared Component) -->
-    <footer class="w-full relative bg-obsidian-surface/90 backdrop-blur-lg border-t border-white/10 flex flex-col items-center gap-4 py-10 px-margin-mobile mt-16 z-10">
-        <div class="text-2xl font-black text-white tracking-tight">AGED<span class="text-primary">i</span>TION</div>
-        
-        <div class="flex flex-wrap justify-center gap-6 text-sm text-text-muted">
-            <a class="hover:text-primary transition-colors" href="index.html">صفحه اصلی</a>
-            <a class="hover:text-primary transition-colors" href="products.html">خرید دوره</a>
-            <a class="hover:text-primary transition-colors" href="about.html">درباره ما</a>
-            <a class="hover:text-primary transition-colors" href="contact.html">پشتیبانی و تماس</a>
-            <a class="hover:text-primary transition-colors" href="dashboard.html">پنل کاربری</a>
-            <a class="hover:text-primary transition-colors" href="admin.html">پنل مدیریت</a>
+          </div>
+          <div class="flex items-center justify-between text-xs text-text-muted pt-3 border-t border-white/5">
+            <span>مدت زمان: ۰۱:۰۴:۲۰</span>
+            <span class="text-primary font-medium">کیفیت ۱۰۸۰p Full HD</span>
+          </div>
         </div>
 
-        <div class="text-xs text-text-muted mt-2">© 2024 AGEDITION. تمامی حقوق برای پلتفرم ادیشن محفوظ است.</div>
-    </footer>
+        <!-- Item 2: ZIP Tools Package -->
+        <div class="glass-card rounded-xl p-5 border border-white/5 flex flex-col justify-between">
+          <div class="flex items-start gap-3.5 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
+              <span class="material-symbols-outlined text-[22px]">folder_zip</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base mb-1">پکیج ابزارهای اختصاصی (فایل ZIP)</h3>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                شامل تمام نرم‌افزارها، ابزارهای دیکامپایل APK، کیت‌های آماده، فایل‌های گرافیکی و اسکریپت‌های مورد نیاز.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between text-xs text-text-muted pt-3 border-t border-white/5">
+            <span>حجم فایل: ۱.۲ گیگابایت</span>
+            <span class="text-secondary font-medium">دانلود مستقیم پس از تأیید</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Core Scripts -->
-    <script src="assets/js/main.js"></script>
+    <!-- Simple 4-Step Purchase Process -->
+    <section class="glass-panel rounded-2xl p-6 sm:p-8 border border-white/10">
+      <h2 class="text-xl font-bold text-white text-center mb-8">مراحل ساده خرید و دریافت دسترسی</h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-center">
+        <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold flex items-center justify-center mb-3">۱</div>
+          <h4 class="text-sm font-bold text-white mb-1">ثبت‌نام سریع</h4>
+          <p class="text-xs text-text-secondary">نام و شماره همراه خود را وارد کنید</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold flex items-center justify-center mb-3">۲</div>
+          <h4 class="text-sm font-bold text-white mb-1">کارت به کارت</h4>
+          <p class="text-xs text-text-secondary">مبلغ ۴۰۰,۰۰۰ تومان را واریز کنید</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold flex items-center justify-center mb-3">۳</div>
+          <h4 class="text-sm font-bold text-white mb-1">ارسال رسید</h4>
+          <p class="text-xs text-text-secondary">عکس فیش واریزی را آپلود نمایید</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold flex items-center justify-center mb-3">۴</div>
+          <h4 class="text-sm font-bold text-white mb-1">فعال‌سازی آنی</h4>
+          <p class="text-xs text-text-secondary">مشاهده ویدیو و دانلود ابزارها در داشبورد</p>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href="register.html" class="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-base font-semibold text-on-primary-fixed active:scale-95 transition-transform shadow-lg shadow-primary/20">
+          <span>شروع ثبت‌نام و خرید دوره</span>
+          <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="glass-panel rounded-2xl p-6 sm:p-8 border border-white/10">
+      <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary">help</span>
+        سوالات متداول
+      </h2>
+
+      <div class="space-y-3">
+        <details class="group bg-surface-container-low rounded-xl border border-white/5 p-4 cursor-pointer transition-all">
+          <summary class="font-medium text-white flex justify-between items-center list-none">
+            <span>آیا این دوره نیاز به دانش برنامه‌نویسی دارد؟</span>
+            <span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-text-secondary mt-3 leading-relaxed border-t border-white/5 pt-3">
+            خیر! تمامی مراحل به زبان ساده و به صورت عملی در یک ویدیوی ۱ ساعته آموزش داده شده است و تمام ابزارهای لازم در فایل ZIP همراه دوره قرار داده شده است.
+          </p>
+        </details>
+
+        <details class="group bg-surface-container-low rounded-xl border border-white/5 p-4 cursor-pointer transition-all">
+          <summary class="font-medium text-white flex justify-between items-center list-none">
+            <span>پس از پرداخت چقدر طول می‌کشد تا دسترسی فعال شود؟</span>
+            <span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-text-secondary mt-3 leading-relaxed border-t border-white/5 pt-3">
+            پس از آپلود عکس رسید واریزی، مدیریت سریعاً رسید را بررسی و تأیید می‌کند و دسترسی کامل به ویدیو و لینک دانلود ابزارها در داشبورد شما فعال می‌گردد.
+          </p>
+        </details>
+
+        <details class="group bg-surface-container-low rounded-xl border border-white/5 p-4 cursor-pointer transition-all">
+          <summary class="font-medium text-white flex justify-between items-center list-none">
+            <span>آیا ابزارهای قرار داده شده برای گوشی اندروید است یا کامپیوتر؟</span>
+            <span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-text-secondary mt-3 leading-relaxed border-t border-white/5 pt-3">
+            ابزارها هم برای گوشی‌های اندرویدی (با برنامه‌های ویرایشگر) و هم برای کامپیوتر آموزش داده شده‌اند تا روی هر دستگاهی بتوانید ادیشن دلخواهتان را بسازید.
+          </p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Nav (Mobile) -->
+  <nav class="md:hidden fixed bottom-0 w-full z-50 glass-panel border-t border-white/10 shadow-[0_-20px_40px_rgba(0,0,0,0.5)]">
+    <div class="flex justify-around items-center h-18 px-2 py-2">
+      <a class="flex flex-col items-center gap-1 p-1.5 text-primary" href="index.html">
+        <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">home</span>
+        <span class="text-[11px] font-medium">خانه</span>
+      </a>
+      <a class="flex flex-col items-center gap-1 p-1.5 text-on-surface-variant hover:text-primary transition-colors" href="course.html">
+        <span class="material-symbols-outlined text-[22px]">school</span>
+        <span class="text-[11px] font-medium">دوره</span>
+      </a>
+      <a class="flex flex-col items-center gap-1 p-1.5 text-on-surface-variant hover:text-primary transition-colors" href="register.html">
+        <span class="material-symbols-outlined text-[22px]">shopping_cart</span>
+        <span class="text-[11px] font-medium">خرید</span>
+      </a>
+      <a class="flex flex-col items-center gap-1 p-1.5 text-on-surface-variant hover:text-primary transition-colors" href="dashboard.html">
+        <span class="material-symbols-outlined text-[22px]">person</span>
+        <span class="text-[11px] font-medium">داشبورد</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Footer -->
+  <footer class="w-full relative bg-obsidian-surface/95 backdrop-blur-lg border-t border-white/10 flex flex-col items-center gap-4 py-8 px-4 text-center mt-12 mb-16 md:mb-0">
+    <div class="text-xl font-bold tracking-tight text-primary">AGEDITION</div>
+    <div class="flex flex-wrap justify-center gap-6 text-xs text-text-muted">
+      <a class="hover:text-secondary transition-colors" href="course.html">درباره دوره</a>
+      <a class="hover:text-secondary transition-colors" href="support.html">پشتیبانی</a>
+      <a class="hover:text-secondary transition-colors" href="dashboard.html">داشبورد کاربری</a>
+      <a class="hover:text-secondary transition-colors" href="admin.html">ورود مدیریت</a>
+    </div>
+    <div class="text-xs text-[#6F7C74] mt-2">
+      © 2024 AGEDITION. تمامی حقوق متعلق به آکادمی تخصصی AGEDITION است.
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

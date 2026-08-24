@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="fa">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <title>ثبت‌نام و خرید دوره | AGEDITION</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#08080a",
+            "obsidian-deep": "#040406",
+            "obsidian-surface": "#0e0e12",
+            "primary": "#10b981",
+            "primary-container": "#059669",
+            "primary-fixed": "#6ee7b7",
+            "secondary": "#34d399",
+            "secondary-container": "#047857",
+            "tertiary": "#10b981",
+            "tertiary-container": "#065f46",
+            "on-background": "#f1f5f9",
+            "text-primary": "#FFFFFF",
+            "text-secondary": "#94a3b8",
+            "text-muted": "#64748b",
+            "error": "#f87171",
+            "error-container": "#7f1d1d",
+            "surface": "#0e0e12",
+            "surface-bright": "#1e293b",
+            "surface-container-lowest": "#040406",
+            "surface-container-low": "#0b0f14",
+            "surface-container": "#111827",
+            "surface-container-high": "#1f2937",
+            "surface-container-highest": "#374151",
+            "surface-variant": "#1e293b",
+            "on-surface": "#f1f5f9",
+            "on-surface-variant": "#94a3b8",
+            "outline": "rgba(255, 255, 255, 0.1)",
+            "outline-variant": "rgba(255, 255, 255, 0.06)",
+            "on-primary": "#000000",
+            "on-primary-fixed": "#000000"
+          },
+          fontFamily: {
+            sans: ["Vazirmatn", "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background min-h-screen font-sans relative overflow-x-hidden selection:bg-primary selection:text-on-primary">
+  <div class="ambient-glow top-0 right-0"></div>
+  <div class="ambient-glow-bottom bottom-0 left-0"></div>
+
+  <!-- Top Navigation -->
+  <header class="w-full pt-6 pb-2 px-4 flex justify-between items-center max-w-md mx-auto relative z-20">
+    <a href="index.html" class="text-on-surface-variant hover:text-white p-2 rounded-full active:scale-95 transition-transform flex items-center gap-1 text-xs">
+      <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+      <span>بازگشت به خانه</span>
+    </a>
+    <a href="dashboard.html" id="dash-link" class="text-xs text-secondary hover:underline">داشبورد من</a>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-md mx-auto w-full min-h-[calc(100vh-80px)] flex flex-col px-4 py-4 pb-24 relative z-10">
+    
+    <!-- Brand Header -->
+    <header class="text-center mb-6">
+      <h1 class="text-3xl font-extrabold text-white tracking-tight">AGEDITION</h1>
+      <p class="text-xs text-text-secondary mt-1 font-medium tracking-wide">.Premium Education</p>
+    </header>
+
+    <!-- Interactive View Container -->
+    <div class="relative flex-1" id="view-container">
+      
+      <!-- PHASE 1: REGISTRATION -->
+      <section class="glass-panel rounded-2xl p-6 sm:p-7 shadow-[0_20px_40px_rgba(0,0,0,0.5)] w-full transition-all duration-500 border border-white/10" id="registration-view">
+        <div class="mb-6">
+          <h2 class="text-xl font-bold text-white">ثبت نام</h2>
+          <p class="text-xs text-text-muted mt-1">برای شروع، اطلاعات خود را وارد کنید</p>
+        </div>
+
+        <form class="space-y-4" id="reg-form" onsubmit="event.preventDefault(); handleRegistration();">
+          <div class="space-y-1.5">
+            <label class="text-xs font-semibold text-[#bccabc] block">
+              نام و نام خانوادگی <span class="text-error">*</span>
+            </label>
+            <input 
+              id="inp-fullname"
+              class="glass-input w-full rounded-xl px-4 py-3.5 text-white text-sm placeholder-text-muted/60" 
+              placeholder="مثال: علی رضایی" 
+              required 
+              type="text"
+            />
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-xs font-semibold text-[#bccabc] block">
+              شماره موبایل <span class="text-error">*</span>
+            </label>
+            <input 
+              id="inp-phone"
+              class="glass-input w-full rounded-xl px-4 py-3.5 text-white text-sm placeholder-text-muted/60 text-right font-mono" 
+              dir="ltr" 
+              placeholder="0912 345 6789" 
+              required 
+              type="tel"
+            />
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-xs font-semibold text-[#bccabc] block">
+              ایمیل <span class="text-text-muted font-normal">(اختیاری)</span>
+            </label>
+            <input 
+              id="inp-email"
+              class="glass-input w-full rounded-xl px-4 py-3.5 text-white text-sm placeholder-text-muted/60 text-right font-mono" 
+              dir="ltr" 
+              placeholder="example@email.com" 
+              type="email"
+            />
+          </div>
+
+          <button 
+            id="btn-reg-submit"
+            class="primary-gradient-btn w-full rounded-xl py-4 mt-6 font-bold text-on-primary text-base flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-lg shadow-primary/25 cursor-pointer" 
+            type="submit"
+          >
+            <span>تکمیل ثبت نام</span>
+            <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+          </button>
+        </form>
+
+        <div class="mt-6 pt-4 border-t border-white/5 text-center text-xs text-text-muted">
+          اطلاعات شما صرفاً جهت فعال‌سازی لایسنس دوره و پشتیبانی استفاده می‌شود.
+        </div>
+      </section>
+
+      <!-- PHASE 2: TRANSITION (3-4 Seconds Loading) -->
+      <section class="hidden absolute inset-0 flex flex-col items-center justify-center text-center p-6 glass-panel rounded-2xl border border-white/10" id="loading-view">
+        <div class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mb-5 animate-pulse-glow">
+          <span class="material-symbols-outlined text-[36px] text-primary">check_circle</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">ثبت نام شما کامل شد</h3>
+        <p class="text-sm text-text-secondary animate-pulse">در حال انتقال به مرحله پرداخت...</p>
+        
+        <!-- Subtle Progress Bar -->
+        <div class="w-48 h-1.5 bg-surface-container-highest rounded-full overflow-hidden mt-6">
+          <div class="h-full bg-primary rounded-full transition-all duration-3000 ease-out" id="transition-bar" style="width: 0%"></div>
+        </div>
+      </section>
+
+      <!-- PHASE 3: PAYMENT & RECEIPT UPLOAD -->
+      <section class="hidden glass-panel rounded-2xl p-6 sm:p-7 shadow-[0_20px_40px_rgba(0,0,0,0.5)] w-full border border-white/10" id="payment-view">
+        <div class="mb-5 flex justify-between items-center border-b border-white/10 pb-4">
+          <div>
+            <h2 class="text-xl font-bold text-white">تکمیل خرید</h2>
+            <p class="text-xs text-text-muted mt-0.5" id="pay-user-label">کاربر: علی رضایی</p>
+          </div>
+          <span class="p-2 bg-primary/10 text-primary rounded-xl material-symbols-outlined">shopping_bag</span>
+        </div>
+
+        <!-- Product Summary -->
+        <div class="bg-surface-container-low rounded-xl p-4 border border-white/5 mb-5">
+          <h4 class="text-xs text-text-secondary font-medium mb-1">محصول:</h4>
+          <p class="text-sm font-semibold text-white leading-snug mb-3" id="pay-product-title">
+            دوره کامل آموزش ساخت ادیشن Dream League Soccer 2019 + پکیج ابزارها
+          </p>
+          
+          <div class="flex justify-between items-center pt-3 border-t border-white/5">
+            <span class="text-xs text-text-muted">مبلغ قابل پرداخت:</span>
+            <div class="text-left">
+              <span class="text-xl font-bold text-primary" id="pay-product-price">۴۰۰,۰۰۰</span>
+              <span class="text-xs text-primary/80 font-medium mr-1">تومان</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instructions -->
+        <p class="text-xs text-[#bccabc] leading-relaxed text-center mb-4" id="pay-instructions">
+          مبلغ را به شماره کارت نمایش داده شده واریز کنید، سپس تصویر رسید پرداخت را ارسال کنید.
+        </p>
+
+        <!-- Admin Configurable Payment Card Image & Click-to-copy -->
+        <div 
+          class="w-full aspect-[1.58/1] rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative mb-5 group cursor-pointer" 
+          id="card-container"
+          onclick="copyCardNumber()"
+          title="برای کپی شماره کارت کلیک کنید"
+        >
+          <div 
+            id="card-image-bg"
+            class="bg-cover bg-center w-full h-full transition-transform duration-500 group-hover:scale-105" 
+            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACf4qiS3DlSo0Ejw_uRMiaMTuPZC8SUf2hC7x92NtkWgq7xxEyEkFdBWqFP7_08n-25MZq1A5qqt-WuJE1cBjXU2-dPw-j3PJAFY0DvmzJccilCPfvypdUVN9FVHLoubJUthU6Xl5ODtK-hwE56T4c3ec5YC_ODYu60UbqLE0WlbvgUvfYr25Dpkup1JjBj2twGPaDVZYQAvGmaN4-tZ3zTScEIofnTAJ24MawBruMBSalnjwjDTkAIg')"
+          ></div>
+          
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4">
+            <div class="flex justify-between items-center text-xs text-white">
+              <span id="card-holder-name" class="font-medium">AGEDITION - علیرضا جلیلیان</span>
+              <span id="card-bank-name" class="text-secondary text-[11px]">بانک ملی ایران</span>
+            </div>
+            <div class="flex items-center justify-between mt-1">
+              <span id="card-number-text" class="font-mono text-base font-bold tracking-widest text-primary dir-ltr">6037-9975-1234-5678</span>
+              <span class="material-symbols-outlined text-white/70 group-hover:text-primary text-[18px] transition-colors">content_copy</span>
+            </div>
+          </div>
+          
+          <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-[2px]">
+            <span class="text-xs bg-obsidian-surface/90 text-white px-3 py-1.5 rounded-full border border-white/20 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px] text-primary">content_copy</span>
+              کپی شماره کارت
+            </span>
+          </div>
+        </div>
+
+        <!-- Receipt Upload Section -->
+        <div class="border-t border-white/10 pt-5">
+          <h3 class="text-sm font-bold text-white mb-3 text-center">ارسال رسید پرداخت</h3>
+          
+          <div 
+            class="glass-input rounded-xl border-dashed border-2 border-white/20 p-6 flex flex-col items-center justify-center text-center cursor-pointer hover:border-primary/60 transition-all mb-4 group relative overflow-hidden min-h-[160px]" 
+            id="upload-zone"
+          >
+            <input 
+              accept="image/jpeg,image/png,image/webp,image/jpg" 
+              class="absolute inset-0 opacity-0 cursor-pointer z-20 w-full h-full" 
+              id="receipt-upload" 
+              onchange="handleReceiptFile(event)" 
+              type="file"
+            />
+            
+            <div class="flex flex-col items-center z-10 pointer-events-none" id="upload-placeholder">
+              <span class="material-symbols-outlined text-[36px] text-text-muted mb-2 group-hover:text-primary transition-colors">cloud_upload</span>
+              <p class="text-xs font-medium text-white mb-0.5">برای انتخاب یا رها کردن تصویر رسید کلیک کنید</p>
+              <span class="text-[11px] text-text-muted">فرمت‌های مجاز: JPG, PNG, WEBP</span>
+            </div>
+
+            <!-- Preview Mode -->
+            <div class="hidden absolute inset-0 w-full h-full bg-surface-container-high flex items-center justify-center z-10" id="upload-preview">
+              <img id="receipt-preview-img" class="w-full h-full object-contain p-2" src="" alt="Receipt Preview"/>
+              <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <span class="text-xs text-white bg-obsidian-surface/90 px-3 py-1.5 rounded-full backdrop-blur-md border border-white/20">
+                  تغییر تصویر رسید
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <button 
+            id="btn-submit-receipt"
+            class="primary-gradient-btn w-full rounded-xl py-4 font-bold text-on-primary flex items-center justify-center gap-2 active:scale-95 transition-transform cursor-pointer shadow-lg shadow-primary/20" 
+            onclick="submitReceiptOrder()"
+          >
+            <span class="material-symbols-outlined text-[20px]">send</span>
+            <span>تأیید و ارسال رسید</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- PHASE 4: SUCCESS / SUBMITTED -->
+      <section class="hidden glass-panel rounded-2xl p-7 text-center border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.5)]" id="success-view">
+        <div class="w-16 h-16 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-4">
+          <span class="material-symbols-outlined text-[36px]">verified</span>
+        </div>
+        <h2 class="text-xl font-bold text-white mb-2">رسید شما با موفقیت ثبت شد</h2>
+        <p class="text-xs sm:text-sm text-text-secondary leading-relaxed mb-6">
+          سفارش شما در وضعیت <strong class="text-primary font-bold">«در انتظار تأیید»</strong> قرار گرفت. پس از بررسی مدیریت (معمولاً چند دقیقه)، دسترسی شما به دوره فعال خواهد شد.
+        </p>
+
+        <div class="flex flex-col gap-3">
+          <a href="dashboard.html" class="btn-primary py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">dashboard</span>
+            <span>مشاهده وضعیت در داشبورد</span>
+          </a>
+          <a href="index.html" class="btn-secondary py-3.5 rounded-xl text-xs flex items-center justify-center gap-2">
+            <span>بازگشت به صفحه اصلی</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    let currentReceiptBase64 = null;
+
+    // Load existing user or prefill
+    document.addEventListener("DOMContentLoaded", async () => {
+      const user = Store.getUser();
+      if (user) {
+        document.getElementById("inp-fullname").value = user.fullName || "";
+        document.getElementById("inp-phone").value = user.phone || "";
+        document.getElementById("inp-email").value = user.email || "";
+      }
+
+      // Load Course config
+      const course = await Store.getCourseConfig();
+      if (course) {
+        if (document.getElementById("pay-product-title")) {
+          document.getElementById("pay-product-title").textContent = course.title;
+        }
+        if (document.getElementById("pay-product-price")) {
+          document.getElementById("pay-product-price").textContent = Number(course.price).toLocaleString("fa-IR");
+        }
+        if (document.getElementById("card-number-text")) {
+          document.getElementById("card-number-text").textContent = course.cardNumber || "6037-9975-1234-5678";
+        }
+        if (document.getElementById("card-holder-name")) {
+          document.getElementById("card-holder-name").textContent = course.cardHolder || "AGEDITION";
+        }
+        if (document.getElementById("card-bank-name")) {
+          document.getElementById("card-bank-name").textContent = course.bankName || "بانک ملی ایران";
+        }
+        if (document.getElementById("card-image-bg") && course.paymentCardImage) {
+          document.getElementById("card-image-bg").style.backgroundImage = `url('${course.paymentCardImage}')`;
+        }
+        if (document.getElementById("pay-instructions") && course.instructions) {
+          document.getElementById("pay-instructions").textContent = course.instructions;
+        }
+      }
+    });
+
+    async function handleRegistration() {
+      const fullName = document.getElementById("inp-fullname").value.trim();
+      const phone = document.getElementById("inp-phone").value.trim();
+      const email = document.getElementById("inp-email").value.trim();
+
+      if (!fullName || !phone) {
+        showToast("لطفاً نام و شماره موبایل را وارد نمایید.", "error");
+        return;
+      }
+
+      const btn = document.getElementById("btn-reg-submit");
+      btn.disabled = true;
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span> در حال ثبت...';
+
+      try {
+        const user = await Store.registerUser(fullName, phone, email);
+        
+        // Phase 1 -> Phase 2 (Transition)
+        const regView = document.getElementById("registration-view");
+        const loadingView = document.getElementById("loading-view");
+        const paymentView = document.getElementById("payment-view");
+
+        regView.classList.add("animate-fade-out");
+        
+        setTimeout(() => {
+          regView.classList.add("hidden");
+          loadingView.classList.remove("hidden");
+          loadingView.classList.add("animate-fade-in");
+          
+          // Animate transition bar
+          const bar = document.getElementById("transition-bar");
+          if (bar) bar.style.width = "100%";
+
+          // Update user label in payment view
+          document.getElementById("pay-user-label").textContent = `کاربر: ${user.fullName} (${user.phone})`;
+
+          // 3.5 seconds subtle transition
+          setTimeout(() => {
+            loadingView.classList.remove("animate-fade-in");
+            loadingView.classList.add("animate-fade-out");
+
+            setTimeout(() => {
+              loadingView.classList.add("hidden");
+              paymentView.classList.remove("hidden");
+              paymentView.classList.add("animate-fade-in");
+            }, 400);
+          }, 3200);
+
+        }, 400);
+
+      } catch (err) {
+        btn.disabled = false;
+        btn.innerHTML = '<span>تکمیل ثبت نام</span><span class="material-symbols-outlined text-[20px]">arrow_back</span>';
+        showToast("خطا در ثبت اطلاعات، لطفاً مجدداً تلاش کنید.", "error");
+      }
+    }
+
+    function handleReceiptFile(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      // Validate format
+      const validTypes = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
+      if (!validTypes.includes(file.type)) {
+        showToast("فرمت فایل قابل قبول نیست. لطفاً تصویر JPG، PNG یا WEBP انتخاب کنید.", "error");
+        return;
+      }
+
+      // Validate size (15MB max)
+      if (file.size > 15 * 1024 * 1024) {
+        showToast("حجم فایل بیش از حد مجاز (حداکثر ۱۵ مگابایت) است.", "error");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        currentReceiptBase64 = e.target.result;
+        document.getElementById("upload-placeholder").classList.add("hidden");
+        const preview = document.getElementById("upload-preview");
+        preview.classList.remove("hidden");
+        document.getElementById("receipt-preview-img").src = currentReceiptBase64;
+        showToast("تصویر رسید انتخاب شد.", "info");
+      };
+      reader.readAsDataURL(file);
+    }
+
+    async function submitReceiptOrder() {
+      if (!currentReceiptBase64) {
+        showToast("لطفاً ابتدا تصویر رسید پرداخت را انتخاب کنید.", "error");
+        return;
+      }
+
+      const btn = document.getElementById("btn-submit-receipt");
+      btn.disabled = true;
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span> در حال آپلود و ثبت رسید...';
+
+      try {
+        await Store.submitReceipt(currentReceiptBase64);
+        
+        const payView = document.getElementById("payment-view");
+        const successView = document.getElementById("success-view");
+
+        payView.classList.add("animate-fade-out");
+        setTimeout(() => {
+          payView.classList.add("hidden");
+          successView.classList.remove("hidden");
+          successView.classList.add("animate-fade-in");
+        }, 400);
+
+      } catch (err) {
+        btn.disabled = false;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">send</span><span>تأیید و ارسال رسید</span>';
+        showToast("خطا در ارسال رسید: " + (err.message || "دوباره تلاش کنید"), "error");
+      }
+    }
+
+    function copyCardNumber() {
+      const cardNum = document.getElementById("card-number-text").textContent.replace(/\s+/g, "");
+      navigator.clipboard.writeText(cardNum).then(() => {
+        showToast("شماره کارت کپی شد: " + cardNum, "success");
+      }).catch(() => {
+        showToast("شماره کارت: " + cardNum, "info");
+      });
+    }
+  </script>
+</body>
+</html>

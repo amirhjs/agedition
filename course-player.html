@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="fa">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <title>مشاهده دوره کامل | AGEDITION</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#08080a",
+            "obsidian-deep": "#040406",
+            "obsidian-surface": "#0e0e12",
+            "primary": "#10b981",
+            "primary-container": "#059669",
+            "primary-fixed": "#6ee7b7",
+            "secondary": "#34d399",
+            "secondary-container": "#047857",
+            "tertiary": "#10b981",
+            "tertiary-container": "#065f46",
+            "on-background": "#f1f5f9",
+            "text-primary": "#FFFFFF",
+            "text-secondary": "#94a3b8",
+            "text-muted": "#64748b",
+            "error": "#f87171",
+            "error-container": "#7f1d1d",
+            "surface": "#0e0e12",
+            "surface-bright": "#1e293b",
+            "surface-container-lowest": "#040406",
+            "surface-container-low": "#0b0f14",
+            "surface-container": "#111827",
+            "surface-container-high": "#1f2937",
+            "surface-container-highest": "#374151",
+            "surface-variant": "#1e293b",
+            "on-surface": "#f1f5f9",
+            "on-surface-variant": "#94a3b8",
+            "outline": "rgba(255, 255, 255, 0.1)",
+            "outline-variant": "rgba(255, 255, 255, 0.06)",
+            "on-primary": "#000000",
+            "on-primary-fixed": "#000000"
+          },
+          fontFamily: {
+            sans: ["Vazirmatn", "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background min-h-screen font-sans relative overflow-x-hidden selection:bg-primary selection:text-on-primary">
+  <div class="ambient-glow"></div>
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-obsidian-surface/80 backdrop-blur-xl border-b border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+    <div class="flex justify-between items-center px-4 sm:px-8 h-16 max-w-6xl mx-auto">
+      <a href="dashboard.html" class="text-on-surface-variant hover:text-white p-2 rounded-full active:scale-95 transition-transform flex items-center gap-1 text-xs">
+        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+        <span class="hidden sm:inline">بازگشت به داشبورد</span>
+      </a>
+      
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="text-xl sm:text-2xl font-bold tracking-tight text-primary">AGEDITION</span>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="dashboard.html" class="btn-secondary text-xs px-3.5 py-1.5 rounded-lg flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">person</span>
+          <span class="hidden sm:inline">حساب کاربری</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-22 pb-24 px-4 max-w-5xl mx-auto flex flex-col gap-6 relative z-10">
+    
+    <!-- LOCKED STATE (If not authorized) -->
+    <div id="locked-state" class="hidden glass-panel rounded-2xl p-8 sm:p-12 text-center border border-white/10 shadow-2xl mt-4">
+      <div class="w-20 h-20 rounded-full bg-error/15 text-error flex items-center justify-center mx-auto mb-5 border border-error/30">
+        <span class="material-symbols-outlined text-[42px]">lock</span>
+      </div>
+      <h2 class="text-2xl font-bold text-white mb-2">دسترسی به این دوره قفل است</h2>
+      <p class="text-sm text-text-secondary max-w-md mx-auto leading-relaxed mb-8">
+        برای مشاهده ویدیوی کامل دوره و دانلود پکیج ابزارها، ابتدا باید ثبت‌نام و پرداخت خود را تکمیل نمایید یا منتظر تأیید رسید پرداخت توسط مدیریت باشید.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-3 max-w-sm mx-auto">
+        <a href="register.html" class="btn-primary py-3.5 px-6 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+          <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+          <span>خرید آنلاین دوره (۴۰۰,۰۰۰ تومان)</span>
+        </a>
+        <a href="dashboard.html" class="btn-secondary py-3.5 px-6 rounded-xl text-xs flex items-center justify-center gap-2">
+          <span>بررسی وضعیت در داشبورد</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ACTIVE VIDEO PLAYER VIEW -->
+    <div id="active-player-view" class="flex flex-col gap-6">
+      
+      <!-- Video Stage -->
+      <div class="relative w-full aspect-video rounded-2xl overflow-hidden glass-panel border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.7)] bg-black group" id="video-container">
+        <video 
+          id="course-video"
+          class="w-full h-full object-contain"
+          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          poster="https://lh3.googleusercontent.com/aida-public/AB6AXuAFneTEQpKE2OQIaFJ9Az8k9ZDt2Ki97yI7qiPedUGU0kAuVcs6_03D24-Vr3U7shfGD6O0NKY85SrNG1n1GIbav51WkYJDM18RebY5FOK0hMzEGE3WaDIR-I6voyZLl_20XRorp1ZUCFS_M4zdcqnfvtYKHiGmUZmyqKYdSx4qCdygLx8jYCw8jd7dJjktb12LpxxZ4NX-8b9FkrCDp8NFVAymJqunoJSYIlLLMiPqZn9IhpbzlM2brw"
+          preload="metadata"
+          playsinline
+        ></video>
+
+        <!-- Big Center Play Button Overlay -->
+        <button id="center-play-btn" onclick="togglePlay()" class="absolute inset-0 m-auto w-20 h-20 rounded-full bg-primary/90 text-obsidian-deep flex items-center justify-center shadow-2xl transition-all group-hover:scale-110 active:scale-95 z-20 cursor-pointer">
+          <span class="material-symbols-outlined text-[44px]" id="center-play-icon" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+        </button>
+
+        <!-- Custom Player Controls Bar -->
+        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent p-4 flex flex-col gap-2 z-30 transition-opacity duration-300 opacity-90 group-hover:opacity-100" id="player-controls">
+          
+          <!-- Timeline Scrubber -->
+          <div class="relative w-full h-2 bg-white/20 rounded-full cursor-pointer overflow-hidden flex items-center group/bar" id="progress-bar-container" onclick="seekVideo(event)">
+            <div id="progress-bar" class="h-full bg-primary rounded-full relative" style="width: 0%"></div>
+          </div>
+
+          <div class="flex items-center justify-between text-xs text-white pt-1">
+            <div class="flex items-center gap-3">
+              <button onclick="togglePlay()" class="text-white hover:text-primary transition-colors cursor-pointer flex items-center">
+                <span class="material-symbols-outlined text-[24px]" id="play-icon">play_arrow</span>
+              </button>
+
+              <button onclick="skipTime(10)" class="text-white/80 hover:text-primary transition-colors cursor-pointer flex items-center" title="۱۰ ثانیه بعد">
+                <span class="material-symbols-outlined text-[20px]">forward_10</span>
+              </button>
+
+              <button onclick="skipTime(-10)" class="text-white/80 hover:text-primary transition-colors cursor-pointer flex items-center" title="۱۰ ثانیه قبل">
+                <span class="material-symbols-outlined text-[20px]">replay_10</span>
+              </button>
+
+              <div class="flex items-center gap-1 font-mono text-[11px] text-text-secondary dir-ltr">
+                <span id="current-time">00:00</span>
+                <span>/</span>
+                <span id="duration-time">01:04:20</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <!-- Speed Selector -->
+              <div class="relative group/speed">
+                <button id="speed-btn" class="px-2 py-1 bg-white/10 hover:bg-white/20 rounded text-[11px] font-mono transition-colors">
+                  1.0x
+                </button>
+                <div class="hidden group-hover/speed:flex absolute bottom-full mb-2 right-0 bg-obsidian-surface/95 backdrop-blur-md rounded-lg border border-white/10 p-1 flex-col gap-1 z-40 text-[10px]">
+                  <button onclick="setPlaybackSpeed(0.75)" class="px-3 py-1 hover:bg-white/10 rounded text-right">0.75x</button>
+                  <button onclick="setPlaybackSpeed(1.0)" class="px-3 py-1 hover:bg-white/10 rounded text-right text-primary font-bold">1.0x (عادی)</button>
+                  <button onclick="setPlaybackSpeed(1.25)" class="px-3 py-1 hover:bg-white/10 rounded text-right">1.25x</button>
+                  <button onclick="setPlaybackSpeed(1.5)" class="px-3 py-1 hover:bg-white/10 rounded text-right">1.5x</button>
+                  <button onclick="setPlaybackSpeed(2.0)" class="px-3 py-1 hover:bg-white/10 rounded text-right">2.0x</button>
+                </div>
+              </div>
+
+              <!-- Fullscreen Button -->
+              <button onclick="toggleFullscreen()" class="text-white hover:text-primary transition-colors cursor-pointer flex items-center">
+                <span class="material-symbols-outlined text-[22px]">fullscreen</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Course Info & Quick Action Bar -->
+      <section class="glass-panel rounded-2xl p-6 sm:p-7 border border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="text-xs bg-primary/20 text-primary border border-primary/30 px-2.5 py-0.5 rounded-full font-bold">
+              ویدیوی کامل ۱ ساعته
+            </span>
+            <span class="text-xs text-text-muted">کیفیت Full HD ۱۰۸۰p</span>
+          </div>
+          <h1 class="text-xl sm:text-2xl font-extrabold text-white" id="player-course-title">
+            دوره کامل آموزش ساخت ادیشن Dream League Soccer 2019 + پکیج ابزارها
+          </h1>
+          <p class="text-xs sm:text-sm text-text-secondary mt-1 max-w-2xl leading-relaxed">
+            در این ویدیوی کامل تمامی مراحل استخراج، تغییر گرافیک، کیت‌ها، لوگو، استادیوم و خروجی APK را یاد می‌گیرید.
+          </p>
+        </div>
+
+        <button onclick="handleToolsDownload()" class="btn-primary w-full md:w-auto px-6 py-3.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-primary/20 flex-shrink-0 cursor-pointer">
+          <span class="material-symbols-outlined text-[18px]">folder_zip</span>
+          <span>دانلود پکیج ابزارها (ZIP)</span>
+        </button>
+      </section>
+
+      <!-- Course Highlights & Tools Reference -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="glass-card rounded-xl p-5 border border-white/5">
+          <h3 class="text-sm font-bold text-white mb-2 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[18px]">checklist</span>
+            <span>نکات مهم هنگام مشاهده دوره</span>
+          </h3>
+          <ul class="space-y-2 text-xs text-text-secondary leading-relaxed list-disc list-inside">
+            <li>ابتدا پکیج ابزارهای ZIP را دانلود و استخراج نمایید.</li>
+            <li>برای ویرایش فایل‌های OBB از نرم‌افزار APK Editor Pro یا MT Manager استفاده نمایید.</li>
+            <li>قبل از هرگونه تغییر، از فایل دیتای اصلی بازی یک نسخه پشتیبان (Backup) بگیرید.</li>
+          </ul>
+        </div>
+
+        <div class="glass-card rounded-xl p-5 border border-white/5">
+          <h3 class="text-sm font-bold text-white mb-2 flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-[18px]">contact_support</span>
+            <span>پشتیبانی و رفع اشکال</span>
+          </h3>
+          <p class="text-xs text-text-secondary leading-relaxed mb-3">
+            چنانچه در هر کدام از مراحل با سوال یا خطایی روبرو شدید، می‌توانید از طریق بخش پشتیبانی داشبورد مستقیماً با ما در ارتباط باشید.
+          </p>
+          <a href="support.html" class="inline-flex items-center gap-1 text-xs text-secondary hover:underline font-semibold">
+            <span>ارسال پیام به پشتیبانی</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    const video = document.getElementById("course-video");
+    const centerPlayBtn = document.getElementById("center-play-btn");
+    const centerPlayIcon = document.getElementById("center-play-icon");
+    const playIcon = document.getElementById("play-icon");
+    const progressBar = document.getElementById("progress-bar");
+    const currentTimeEl = document.getElementById("current-time");
+    const durationTimeEl = document.getElementById("duration-time");
+    let currentUser = null;
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      currentUser = Store.getUser();
+      const order = currentUser ? await Store.getUserOrder(currentUser.id) : null;
+      const isAdmin = Store.isAdmin();
+
+      // Check permission
+      const hasAccess = isAdmin || (order && order.status === "approved");
+
+      if (!hasAccess) {
+        document.getElementById("locked-state").classList.remove("hidden");
+        document.getElementById("active-player-view").classList.add("hidden");
+      } else {
+        document.getElementById("locked-state").classList.add("hidden");
+        document.getElementById("active-player-view").classList.remove("hidden");
+      }
+
+      // Load Course video config
+      const course = await Store.getCourseConfig();
+      if (course) {
+        if (document.getElementById("player-course-title")) {
+          document.getElementById("player-course-title").textContent = course.title;
+        }
+        if (course.videoUrl && video) {
+          video.src = course.videoUrl;
+        }
+      }
+
+      setupVideoEvents();
+    });
+
+    function setupVideoEvents() {
+      if (!video) return;
+
+      video.addEventListener("timeupdate", () => {
+        if (!isNaN(video.duration)) {
+          const percent = (video.currentTime / video.duration) * 100;
+          progressBar.style.width = percent + "%";
+          currentTimeEl.textContent = formatTime(video.currentTime);
+        }
+      });
+
+      video.addEventListener("loadedmetadata", () => {
+        durationTimeEl.textContent = formatTime(video.duration || 3860);
+      });
+
+      video.addEventListener("play", () => {
+        centerPlayBtn.style.opacity = "0";
+        centerPlayBtn.style.pointerEvents = "none";
+        playIcon.textContent = "pause";
+      });
+
+      video.addEventListener("pause", () => {
+        centerPlayBtn.style.opacity = "1";
+        centerPlayBtn.style.pointerEvents = "auto";
+        playIcon.textContent = "play_arrow";
+      });
+    }
+
+    function togglePlay() {
+      if (!video) return;
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+
+    function skipTime(seconds) {
+      if (!video) return;
+      video.currentTime = Math.max(0, Math.min(video.duration || 3860, video.currentTime + seconds));
+    }
+
+    function seekVideo(e) {
+      if (!video) return;
+      const rect = e.currentTarget.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
+      video.currentTime = pos * (video.duration || 3860);
+    }
+
+    function setPlaybackSpeed(rate) {
+      if (!video) return;
+      video.playbackRate = rate;
+      document.getElementById("speed-btn").textContent = rate + "x";
+    }
+
+    function toggleFullscreen() {
+      const container = document.getElementById("video-container");
+      if (!document.fullscreenElement) {
+        container.requestFullscreen().catch(err => console.log(err));
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return "00:00";
+      const h = Math.floor(seconds / 3600);
+      const m = Math.floor((seconds % 3600) / 60);
+      const s = Math.floor(seconds % 60);
+      if (h > 0) {
+        return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+      }
+      return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    }
+
+    function handleToolsDownload() {
+      if (!currentUser) return;
+      showToast("در حال آماده‌سازی و دانلود پکیج ابزارها...", "success");
+      const link = document.createElement("a");
+      link.href = `/api/download/tools?userId=${currentUser.id}`;
+      link.setAttribute("download", "DLS19_AGEDITION_Tools_Package_V2.zip");
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }
+  </script>
+</body>
+</html>

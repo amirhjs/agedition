@@ -1,474 +1,977 @@
 <!DOCTYPE html>
 <html class="dark" dir="rtl" lang="fa">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
-    <title>AGEDITION | پنل مدیریت و بررسی رسیدها</title>
-    <meta name="description" content="پنل مدیریت پیشرفته AGEDITION جهت بررسی فیش‌های واریزی، مدیریت فایل‌های دوره و نظارت بر کاربران"/>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>AGEDITION Admin Dashboard | پنل مدیریت</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
 
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "tertiary-container": "#00b968",
-                        "secondary-fixed": "#8bf9b4",
-                        "surface-variant": "#2f3731",
-                        "outline-variant": "#3d4a3f",
-                        "on-secondary-container": "#003119",
-                        "tertiary": "#35e286",
-                        "obsidian-deep": "#020504",
-                        "secondary-fixed-dim": "#6edc9a",
-                        "on-tertiary-fixed": "#00210e",
-                        "on-secondary": "#00391e",
-                        "on-secondary-fixed-variant": "#00522e",
-                        "on-tertiary-container": "#004121",
-                        "primary": "#50e08a",
-                        "on-primary-fixed": "#00210e",
-                        "on-background": "#dde5dc",
-                        "text-muted": "#6F7C74",
-                        "error": "#ffb4ab",
-                        "surface-container-lowest": "#09100b",
-                        "on-primary": "#00391b",
-                        "secondary-container": "#31a467",
-                        "primary-container": "#16b968",
-                        "tertiary-fixed-dim": "#35e286",
-                        "background": "#0e1510",
-                        "forest-mute": "#0D2116",
-                        "on-error-container": "#ffdad6",
-                        "surface-bright": "#333b35",
-                        "surface-container-low": "#161d18",
-                        "text-primary": "#FFFFFF",
-                        "on-primary-container": "#004220",
-                        "surface": "#0e1510",
-                        "surface-container-high": "#242c26",
-                        "inverse-surface": "#dde5dc",
-                        "on-secondary-fixed": "#00210f",
-                        "obsidian-surface": "#08120C",
-                        "surface-container-highest": "#2f3731",
-                        "primary-fixed": "#70fda4",
-                        "on-surface": "#dde5dc",
-                        "surface-tint": "#50e08a",
-                        "inverse-primary": "#006d3a",
-                        "secondary": "#6edc9a",
-                        "inverse-on-surface": "#2b322d",
-                        "on-primary-fixed-variant": "#00522a",
-                        "error-container": "#93000a",
-                        "on-surface-variant": "#bccabc",
-                        "text-secondary": "#A9B5AE",
-                        "tertiary-fixed": "#5cffa0",
-                        "on-tertiary": "#00391c",
-                        "surface-dim": "#0e1510",
-                        "on-error": "#690005",
-                        "on-tertiary-fixed-variant": "#00522b",
-                        "outline": "#869487",
-                        "primary-fixed-dim": "#50e08a",
-                        "surface-container": "#1a211c"
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    spacing: {
-                        "margin-desktop": "40px",
-                        "unit": "8px",
-                        "container-max": "1200px",
-                        "gutter": "24px",
-                        "margin-mobile": "16px"
-                    }
-                }
-            }
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#08080a",
+            "obsidian-deep": "#040406",
+            "obsidian-surface": "#0e0e12",
+            "primary": "#10b981",
+            "primary-container": "#059669",
+            "primary-fixed": "#6ee7b7",
+            "secondary": "#34d399",
+            "secondary-container": "#047857",
+            "tertiary": "#10b981",
+            "tertiary-container": "#065f46",
+            "on-background": "#f1f5f9",
+            "text-primary": "#FFFFFF",
+            "text-secondary": "#94a3b8",
+            "text-muted": "#64748b",
+            "error": "#f87171",
+            "error-container": "#7f1d1d",
+            "surface": "#0e0e12",
+            "surface-bright": "#1e293b",
+            "surface-container-lowest": "#040406",
+            "surface-container-low": "#0b0f14",
+            "surface-container": "#111827",
+            "surface-container-high": "#1f2937",
+            "surface-container-highest": "#374151",
+            "surface-variant": "#1e293b",
+            "on-surface": "#f1f5f9",
+            "on-surface-variant": "#94a3b8",
+            "outline": "rgba(255, 255, 255, 0.1)",
+            "outline-variant": "rgba(255, 255, 255, 0.06)",
+            "on-primary": "#000000",
+            "on-primary-fixed": "#000000"
+          },
+          fontFamily: {
+            sans: ["Vazirmatn", "sans-serif"],
+          }
         }
-    </script>
+      }
+    }
+  </script>
 </head>
-<body class="relative min-h-screen pb-[100px] md:pb-12 md:pr-64 bg-background text-on-background selection:bg-primary selection:text-on-primary">
-    <!-- Atmospheric Glow -->
-    <div class="ambient-glow"></div>
-    <div class="ambient-glow-bottom"></div>
+<body class="relative min-h-screen pb-[100px] md:pb-12 md:pr-64 bg-background text-on-background selection:bg-primary selection:text-on-primary font-sans">
+  <div class="ambient-glow"></div>
 
-    <!-- Header (Shared Component: TopAppBar) -->
-    <header class="fixed top-0 w-full z-50 bg-obsidian-surface/80 backdrop-blur-xl border-b border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)] flex justify-between items-center px-margin-mobile h-16">
-        <button id="menu-btn" class="md:hidden text-primary hover:bg-white/5 active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center min-h-interactive">
-            <span class="material-symbols-outlined text-[26px]">menu</span>
+  <!-- ADMIN AUTH GATE (If not logged in as ajalilian446@gmail.com) -->
+  <div id="admin-gate" class="fixed inset-0 z-[100] bg-obsidian-deep/95 backdrop-blur-2xl flex items-center justify-center p-4">
+    <div class="glass-panel rounded-3xl p-8 max-w-md w-full border border-white/20 shadow-2xl animate-fade-in text-center">
+      <div class="w-16 h-16 rounded-2xl bg-primary/20 text-primary flex items-center justify-center mx-auto mb-4 border border-primary/30">
+        <span class="material-symbols-outlined text-[36px]">admin_panel_settings</span>
+      </div>
+      <h2 class="text-2xl font-extrabold text-white mb-1">ورود به پنل مدیریت AGEDITION</h2>
+      <p class="text-xs text-text-secondary mb-6">
+        برای دسترسی به پنل مدیریت، ایمیل رسمی مدیر سایت (<strong class="text-primary font-mono">ajalilian446@gmail.com</strong>) را وارد نمایید.
+      </p>
+
+      <form onsubmit="event.preventDefault(); handleAdminAuth();" class="space-y-4 text-right">
+        <div class="space-y-1">
+          <label class="text-xs text-text-secondary block">ایمیل مدیریت <span class="text-error">*</span></label>
+          <input 
+            id="admin-email-input" 
+            type="email" 
+            dir="ltr" 
+            class="glass-input w-full rounded-xl px-4 py-3 text-sm text-white font-mono placeholder-text-muted/60" 
+            value="ajalilian446@gmail.com" 
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn-primary w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-primary/20">
+          <span>احراز هویت و ورود</span>
+          <span class="material-symbols-outlined text-[18px]">lock_open</span>
         </button>
-        
-        <h1 class="text-xl font-bold tracking-tight text-white">AGED<span class="text-primary">i</span>TION <span class="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded mr-2">پنل مدیریت</span></h1>
-        
-        <div class="flex items-center gap-2">
-            <button data-notif-btn class="text-primary hover:bg-white/5 active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center min-h-interactive relative">
-                <span class="material-symbols-outlined text-[24px]">notifications</span>
-                <span class="absolute top-2 left-2 w-2 h-2 bg-error rounded-full animate-ping"></span>
-            </button>
-            <a href="index.html" class="hidden sm:inline-flex text-xs text-text-muted hover:text-white items-center gap-1 border border-white/10 rounded-full px-3 py-1">
-                <span>مشاهده سایت</span>
-                <span class="material-symbols-outlined text-[14px]">open_in_new</span>
-            </a>
+      </form>
+
+      <div class="mt-6 pt-4 border-t border-white/5 text-center">
+        <a href="index.html" class="text-xs text-text-muted hover:text-white transition-colors">بازگشت به صفحه اصلی</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header (Mobile TopAppBar) -->
+  <header class="fixed top-0 inset-x-0 md:left-0 md:right-64 z-50 bg-obsidian-surface/80 backdrop-blur-xl border-b border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)] flex justify-between items-center px-4 sm:px-8 h-16">
+    <button class="md:hidden text-primary hover:bg-white/5 active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center" id="menu-btn">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+    </button>
+    <div class="flex items-center gap-2">
+      <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-primary">AGEDITION</h1>
+      <span class="text-[10px] bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 rounded-full font-bold">پنل مدیریت</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="index.html" class="btn-secondary text-xs px-3 py-1.5 rounded-lg flex items-center gap-1">
+        <span class="material-symbols-outlined text-[16px]">visibility</span>
+        <span class="hidden sm:inline">مشاهده سایت</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Desktop Sidebar Navigation (Right side for RTL) -->
+  <aside class="hidden md:flex fixed inset-y-0 right-0 w-64 z-[60] bg-obsidian-deep/90 backdrop-blur-[30px] border-l border-white/10 flex-col p-6 shadow-2xl">
+    <div class="mb-8 border-b border-white/10 pb-4">
+      <div class="text-2xl font-bold text-primary tracking-tight">AGEDITION</div>
+      <p class="text-[11px] text-text-muted mt-1">مدیریت دوره‌ها و رسیدها</p>
+    </div>
+
+    <nav class="flex flex-col gap-1.5 flex-1">
+      <a href="#section-overview" class="text-primary flex items-center gap-3 py-3 px-4 bg-primary-container/20 rounded-xl transition-all">
+        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+        <span class="text-sm font-medium">نمای کلی</span>
+      </a>
+      <a href="#section-receipts" class="text-on-surface-variant flex items-center gap-3 py-3 px-4 hover:bg-white/5 hover:text-primary rounded-xl transition-all">
+        <span class="material-symbols-outlined text-[20px]">receipt_long</span>
+        <span class="text-sm font-medium">بررسی رسیدها</span>
+      </a>
+      <a href="#section-video" class="text-on-surface-variant flex items-center gap-3 py-3 px-4 hover:bg-white/5 hover:text-primary rounded-xl transition-all">
+        <span class="material-symbols-outlined text-[20px]">movie</span>
+        <span class="text-sm font-medium">مدیریت ویدیو</span>
+      </a>
+      <a href="#section-tools" class="text-on-surface-variant flex items-center gap-3 py-3 px-4 hover:bg-white/5 hover:text-primary rounded-xl transition-all">
+        <span class="material-symbols-outlined text-[20px]">folder_zip</span>
+        <span class="text-sm font-medium">پکیج ابزارها</span>
+      </a>
+      <a href="#section-card" class="text-on-surface-variant flex items-center gap-3 py-3 px-4 hover:bg-white/5 hover:text-primary rounded-xl transition-all">
+        <span class="material-symbols-outlined text-[20px]">credit_card</span>
+        <span class="text-sm font-medium">کارت پرداخت</span>
+      </a>
+      <a href="#section-feedback" class="text-on-surface-variant flex items-center gap-3 py-3 px-4 hover:bg-white/5 hover:text-primary rounded-xl transition-all">
+        <span class="material-symbols-outlined text-[20px]">chat</span>
+        <span class="text-sm font-medium">نظرات کاربران</span>
+      </a>
+    </nav>
+
+    <div class="mt-auto border-t border-white/10 pt-4">
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xs font-bold">A</div>
+        <div class="overflow-hidden">
+          <p class="text-xs text-white truncate font-medium">مدیریت AGEDITION</p>
+          <p class="text-[10px] text-text-muted truncate font-mono">ajalilian446@gmail.com</p>
         </div>
-    </header>
+      </div>
+      <button onclick="handleAdminLogout()" class="w-full py-2 px-3 text-xs text-error hover:bg-error/10 rounded-lg text-right flex items-center justify-between transition-colors">
+        <span>خروج از پنل</span>
+        <span class="material-symbols-outlined text-[16px]">logout</span>
+      </button>
+    </div>
+  </aside>
 
-    <!-- Desktop Sidebar Navigation Drawer -->
-    <aside class="hidden md:flex fixed inset-y-0 right-0 w-64 z-[60] bg-obsidian-deep/90 backdrop-blur-[30px] border-l border-white/10 flex-col p-6 gap-2 shadow-2xl">
-        <div class="mb-8 pb-4 border-b border-white/10">
-            <h1 class="text-2xl font-black text-white tracking-tight">AGED<span class="text-primary">i</span>TION</h1>
-            <p class="text-xs text-text-muted mt-1">مدیریت سفارشات و دوره‌ها</p>
-        </div>
+  <!-- Mobile Drawer -->
+  <nav class="fixed inset-y-0 right-0 z-[60] bg-obsidian-deep/95 backdrop-blur-[30px] border-l border-white/10 shadow-2xl flex flex-col p-6 w-72 max-w-full md:hidden" id="nav-drawer" style="transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+    <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-3">
+      <div class="text-xl font-bold text-primary">AGEDITION</div>
+      <button aria-label="Close Menu" class="text-on-surface-variant hover:bg-white/5 p-2 rounded-full" id="close-menu-btn">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    
+    <div class="flex flex-col gap-2 flex-1">
+      <a class="nav-item text-primary flex items-center gap-3 py-3 px-4 bg-primary-container/20 rounded-xl" href="#section-overview" onclick="closeDrawer()">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span class="text-sm font-medium">نمای کلی</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-3 py-3 px-4 hover:text-primary rounded-xl" href="#section-receipts" onclick="closeDrawer()">
+        <span class="material-symbols-outlined">receipt_long</span>
+        <span class="text-sm font-medium">بررسی رسیدها</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-3 py-3 px-4 hover:text-primary rounded-xl" href="#section-video" onclick="closeDrawer()">
+        <span class="material-symbols-outlined">movie</span>
+        <span class="text-sm font-medium">مدیریت ویدیو</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-3 py-3 px-4 hover:text-primary rounded-xl" href="#section-tools" onclick="closeDrawer()">
+        <span class="material-symbols-outlined">folder_zip</span>
+        <span class="text-sm font-medium">پکیج ابزارها</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-3 py-3 px-4 hover:text-primary rounded-xl" href="#section-card" onclick="closeDrawer()">
+        <span class="material-symbols-outlined">credit_card</span>
+        <span class="text-sm font-medium">کارت پرداخت</span>
+      </a>
+    </div>
 
-        <nav class="flex flex-col gap-2 flex-1">
-            <a href="admin.html" class="text-primary flex items-center gap-3 py-3 px-4 bg-primary-container/20 rounded-xl transition-all">
-                <span class="material-symbols-outlined fill-1">receipt_long</span>
-                <span class="font-medium text-sm">بررسی رسیدها</span>
-            </a>
-            <a href="dashboard.html" class="text-on-surface-variant flex items-center gap-3 py-3 px-4 hover:bg-white/5 hover:text-primary rounded-xl transition-all">
-                <span class="material-symbols-outlined">dashboard</span>
-                <span class="font-medium text-sm">داشبورد کاربری</span>
-            </a>
-            <a href="products.html" class="text-on-surface-variant flex items-center gap-3 py-3 px-4 hover:bg-white/5 hover:text-primary rounded-xl transition-all">
-                <span class="material-symbols-outlined">school</span>
-                <span class="font-medium text-sm">صفحه خرید دوره</span>
-            </a>
-            <a href="index.html" class="text-on-surface-variant flex items-center gap-3 py-3 px-4 hover:bg-white/5 hover:text-primary rounded-xl transition-all">
-                <span class="material-symbols-outlined">home</span>
-                <span class="font-medium text-sm">صفحه اصلی سایت</span>
-            </a>
-        </nav>
+    <button onclick="handleAdminLogout()" class="mt-auto py-3 px-4 text-xs text-error border border-error/20 rounded-xl text-center">
+      خروج از مدیریت
+    </button>
+  </nav>
+  <div class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm" id="drawer-overlay"></div>
 
-        <div class="mt-auto border-t border-white/10 pt-4">
-            <div class="flex items-center gap-3 mb-3">
-                <div class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-xs">
-                    AD
-                </div>
-                <div>
-                    <p class="text-xs font-bold text-white">مدیر ارشد</p>
-                    <p class="text-[10px] text-text-muted">admin@agedition.ir</p>
-                </div>
+  <!-- Main Content Area -->
+  <main class="pt-20 px-4 sm:px-8 max-w-5xl mx-auto flex flex-col gap-8 relative z-10">
+    
+    <!-- 1. Overview Section («نمای کلی») -->
+    <section id="section-overview" class="pt-4">
+      <h2 class="text-xl sm:text-2xl font-bold text-white mb-4">نمای کلی آمار</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- Stat Card 1 -->
+        <div class="glass-card rounded-2xl p-5 flex flex-col justify-between border border-white/10">
+          <div class="flex justify-between items-start mb-3">
+            <div class="p-2.5 bg-primary/15 rounded-xl text-primary">
+              <span class="material-symbols-outlined text-2xl">group</span>
             </div>
-            <button onclick="showToast('شما با دسترسی ادمین وارد شده‌اید.', 'info')" class="w-full text-center text-xs text-text-muted hover:text-white py-1">
-                نسخه سیستم v2.4
-            </button>
+            <span class="text-primary text-xs font-bold">+۱۲٪</span>
+          </div>
+          <div>
+            <p class="text-xs text-text-muted mb-0.5">کل کاربران</p>
+            <p class="text-2xl font-bold text-white" id="stat-total-users">۲,۴۵۰</p>
+          </div>
         </div>
-    </aside>
 
-    <!-- Mobile Navigation Drawer -->
-    <nav id="nav-drawer" class="md:hidden fixed inset-y-0 right-0 z-[60] bg-obsidian-deep/90 backdrop-blur-[32px] border-l border-white/10 shadow-2xl flex flex-col p-6 w-3/4 max-w-xs justify-between">
+        <!-- Stat Card 2 -->
+        <div class="glass-card rounded-2xl p-5 flex flex-col justify-between border border-white/10">
+          <div class="flex justify-between items-start mb-3">
+            <div class="p-2.5 bg-error/15 rounded-xl text-error">
+              <span class="material-symbols-outlined text-2xl">pending_actions</span>
+            </div>
+            <span class="text-error text-xs font-bold" id="stat-pending-badge">نیازمند بررسی</span>
+          </div>
+          <div>
+            <p class="text-xs text-text-muted mb-0.5">سفارشات در انتظار</p>
+            <p class="text-2xl font-bold text-white" id="stat-pending-orders">۱</p>
+          </div>
+        </div>
+
+        <!-- Stat Card 3 -->
+        <div class="glass-card rounded-2xl p-5 flex flex-col justify-between border border-white/10">
+          <div class="flex justify-between items-start mb-3">
+            <div class="p-2.5 bg-secondary/15 rounded-xl text-secondary">
+              <span class="material-symbols-outlined text-2xl">verified</span>
+            </div>
+            <span class="text-secondary text-xs font-bold">تأیید شده</span>
+          </div>
+          <div>
+            <p class="text-xs text-text-muted mb-0.5">سفارشات موفق</p>
+            <p class="text-2xl font-bold text-white" id="stat-approved-orders">۲,۴۴۰</p>
+          </div>
+        </div>
+
+        <!-- Stat Card 4 -->
+        <div class="glass-card rounded-2xl p-5 flex flex-col justify-between border border-white/10">
+          <div class="flex justify-between items-start mb-3">
+            <div class="p-2.5 bg-tertiary/15 rounded-xl text-tertiary">
+              <span class="material-symbols-outlined text-2xl">payments</span>
+            </div>
+            <span class="text-tertiary text-xs font-bold">فروش کل</span>
+          </div>
+          <div>
+            <p class="text-xs text-text-muted mb-0.5">درآمد ناخالص</p>
+            <p class="text-lg font-bold text-primary truncate" id="stat-revenue">۹۷۶,۰۰۰,۰۰۰ تومان</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Receipt Review View (Main Focus - Exact Stitch Design) -->
+    <section id="section-receipts">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+          <span>بررسی رسیدهای پرداخت</span>
+          <span class="text-xs bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 rounded-full" id="orders-count-label">۱ مورد</span>
+        </h2>
+        <span id="urgent-badge" class="px-3 py-1 rounded-full bg-error/20 text-error text-xs font-bold border border-error/30 animate-pulse">
+          اقدام فوری
+        </span>
+      </div>
+
+      <!-- Active Selected Receipt Card -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col gap-6 border border-white/10 shadow-2xl">
+        
+        <!-- User Info Bar -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden border border-white/15 flex-shrink-0">
+              <img 
+                id="receipt-user-avatar"
+                class="w-full h-full object-cover" 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCynUHvxMHBzLglehXPv49-C3ONKHnmWw11QFicPJyo0FPAUsJQDNmm8YAiR_DzoXF3n-FH4p_q96S_2B93yj8D8Vb5HXa17aAw85_Uq2-F5OKG1HzrYnzhSoH5A8bOotAU6R4aIokKPCqjeK8rz1ARV27YBt5t-HmrzhHO2pCLhudzNeaTPP7j1MW_S377ZPorREqy6gkSAPEKnNDx6nxJlau2Q7tQbS5dQPA1aSMqia39HoTT77QUBA"
+                alt="User Avatar"
+              />
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white" id="receipt-user-name">علی رضایی</h3>
+              <div class="flex items-center gap-2 text-xs text-text-muted mt-0.5">
+                <span id="receipt-order-id">شماره سفارش: #۸۹۰۴۲</span>
+                <span>•</span>
+                <span id="receipt-user-phone" dir="ltr" class="font-mono text-[11px]">0912 345 6789</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-right sm:text-left flex sm:flex-col justify-between items-center sm:items-end">
+            <p class="text-xs text-text-muted">مبلغ سفارش</p>
+            <p class="text-xl font-extrabold text-primary" id="receipt-amount-display" dir="ltr">
+              400,000 <span class="text-xs text-primary/80">تومان</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Receipt Preview Area with Full Zoom & Pan Controls -->
+        <div class="relative w-full h-[380px] sm:h-[420px] bg-obsidian-deep rounded-xl overflow-hidden border border-white/10 flex flex-col group/viewer">
+          
+          <!-- Viewer Toolbar -->
+          <div class="absolute top-0 inset-x-0 p-3 flex justify-between items-center z-20 bg-gradient-to-b from-black/80 to-transparent">
+            <span class="text-xs text-text-secondary bg-black/50 px-2.5 py-1 rounded-md backdrop-blur-md border border-white/10" id="receipt-zoom-level">
+              بزرگ‌نمایی: ۱۰۰٪
+            </span>
+
+            <div class="flex gap-1.5">
+              <button onclick="zoomReceipt(0.2)" class="p-2 rounded-lg bg-black/50 hover:bg-black/80 text-white backdrop-blur-md border border-white/10 transition-colors flex items-center justify-center cursor-pointer" title="بزرگ‌نمایی (Zoom In)">
+                <span class="material-symbols-outlined text-[18px]">zoom_in</span>
+              </button>
+              <button onclick="zoomReceipt(-0.2)" class="p-2 rounded-lg bg-black/50 hover:bg-black/80 text-white backdrop-blur-md border border-white/10 transition-colors flex items-center justify-center cursor-pointer" title="کوچک‌نمایی (Zoom Out)">
+                <span class="material-symbols-outlined text-[18px]">zoom_out</span>
+              </button>
+              <button onclick="resetZoom()" class="p-2 rounded-lg bg-black/50 hover:bg-black/80 text-white backdrop-blur-md border border-white/10 transition-colors flex items-center justify-center cursor-pointer" title="اندازه اصلی">
+                <span class="material-symbols-outlined text-[18px]">restart_alt</span>
+              </button>
+              <button onclick="toggleReceiptFullscreen()" class="p-2 rounded-lg bg-black/50 hover:bg-black/80 text-white backdrop-blur-md border border-white/10 transition-colors flex items-center justify-center cursor-pointer" title="تمام صفحه">
+                <span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Image Container (Pannable & Zoomable) -->
+          <div 
+            class="flex-1 w-full h-full flex items-center justify-center overflow-auto p-4 cursor-grab active:cursor-grabbing select-none"
+            id="receipt-viewport"
+            onmousedown="startPan(event)"
+          >
+            <img 
+              id="active-receipt-img"
+              class="max-w-full max-h-full object-contain rounded drop-shadow-2xl transition-transform duration-150 ease-out" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX_sN55-Na6b4BI-nu59vfx3LrPjQ5hXDbTNnB8ZyGNe-YtHMh3R3_mIE1-qsZLEVhtmjuxEDSG94bSXg6dNvAEO0_6EPtnUIz4c1hbDvD_zfbnwJ_ahDQfVwuX1chgybr9DvXtKCyzvr2CI9000eWUOCHB89OBOjT_BKUn5XfrY8QnLSMJ2YH6vFYjEniUQDdZ3RpVAjHigpBdKBcahZJ-rFErTHA9xoyN1ChQYnTp5k4Cp9uX9P3LA"
+              alt="Payment Slip"
+              style="transform: scale(1);"
+            />
+          </div>
+        </div>
+
+        <!-- Admin Actions (Exact Stitch Match) -->
+        <div class="flex flex-col sm:flex-row gap-3 mt-1">
+          <button 
+            id="btn-admin-approve"
+            onclick="approveCurrentOrder()"
+            class="btn-primary flex-1 py-3.5 px-6 rounded-xl text-sm font-bold flex items-center justify-center gap-2 cursor-pointer transition-transform active:scale-95 shadow-lg shadow-primary/20"
+          >
+            <span class="material-symbols-outlined text-[20px]">check_circle</span>
+            <span>تأیید پرداخت</span>
+          </button>
+
+          <button 
+            id="btn-admin-reject"
+            onclick="rejectCurrentOrder()"
+            class="btn-secondary flex-1 py-3.5 px-6 rounded-xl text-sm font-bold flex items-center justify-center gap-2 cursor-pointer hover:bg-error/20 hover:text-error hover:border-error/50 transition-all active:scale-95"
+          >
+            <span class="material-symbols-outlined text-[20px]">cancel</span>
+            <span>رد پرداخت</span>
+          </button>
+
+          <button 
+            onclick="openMessageModal()"
+            class="glass-panel w-full sm:w-auto py-3.5 px-6 rounded-xl text-sm font-medium flex items-center justify-center gap-2 cursor-pointer hover:bg-white/10 transition-colors active:scale-95 text-white"
+          >
+            <span class="material-symbols-outlined text-[20px]">chat</span>
+            <span>ارسال پیام</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Orders List Selector -->
+      <div class="mt-6 glass-panel rounded-2xl p-5 border border-white/10">
+        <h3 class="text-sm font-bold text-white mb-3">همه سفارشات ثبت شده</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-right text-xs">
+            <thead>
+              <tr class="border-b border-white/10 text-text-muted">
+                <th class="pb-2 font-medium">سفارش</th>
+                <th class="pb-2 font-medium">کاربر</th>
+                <th class="pb-2 font-medium">شماره موبایل</th>
+                <th class="pb-2 font-medium">مبلغ</th>
+                <th class="pb-2 font-medium">وضعیت</th>
+                <th class="pb-2 font-medium">عملیات</th>
+              </tr>
+            </thead>
+            <tbody id="orders-table-body" class="divide-y divide-white/5">
+              <!-- Dynamically rendered -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Management Sections (Video & Tools Package - Exact Stitch Match) -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Video Management («مدیریت ویدیوی دوره») -->
+      <div id="section-video" class="glass-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between">
         <div>
-            <div class="flex justify-between items-center mb-8 pb-4 border-b border-white/10">
-                <div class="text-xl font-bold tracking-tight text-white">AGED<span class="text-primary">i</span>TION</div>
-                <button id="close-menu-btn" aria-label="Close Menu" class="text-on-surface-variant hover:text-white p-2 rounded-full active:scale-95 transition-transform">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
+          <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-2xl">play_circle</span>
+              <h3 class="text-base font-bold text-white">مدیریت ویدیوی دوره</h3>
             </div>
-            
-            <div class="flex flex-col gap-2">
-                <a href="admin.html" class="flex items-center gap-4 py-3.5 px-4 bg-primary-container/20 text-primary rounded-xl transition-all">
-                    <span class="material-symbols-outlined fill-1">receipt_long</span>
-                    <span class="font-medium text-sm">مدیریت رسیدها (Admin)</span>
-                </a>
-                <a href="dashboard.html" class="flex items-center gap-4 py-3.5 px-4 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-xl transition-all">
-                    <span class="material-symbols-outlined">person</span>
-                    <span class="font-medium text-sm">پنل کاربری (Account)</span>
-                </a>
-                <a href="products.html" class="flex items-center gap-4 py-3.5 px-4 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-xl transition-all">
-                    <span class="material-symbols-outlined">shopping_cart</span>
-                    <span class="font-medium text-sm">صفحه خرید دوره (Course)</span>
-                </a>
-                <a href="index.html" class="flex items-center gap-4 py-3.5 px-4 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-xl transition-all">
-                    <span class="material-symbols-outlined">home</span>
-                    <span class="font-medium text-sm">صفحه اصلی (Home)</span>
-                </a>
-            </div>
-        </div>
-    </nav>
-    <div id="drawer-overlay" class="fixed inset-0 bg-black/60 z-50 hidden transition-opacity duration-300"></div>
+            <span class="text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded-full font-bold">۱ ویدیو کامل</span>
+          </div>
 
-    <!-- Main Content Area -->
-    <main class="pt-[80px] px-margin-mobile flex flex-col gap-6 mx-auto max-w-container-max relative z-10">
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex items-center justify-between">
+              <div class="flex items-center gap-3 overflow-hidden">
+                <span class="material-symbols-outlined text-text-muted text-2xl">movie</span>
+                <div class="overflow-hidden">
+                  <p class="text-xs font-bold text-white truncate" id="admin-video-name">DLS19_Master_Edition_Course_Complete.mp4</p>
+                  <p class="text-[10px] text-primary" id="admin-video-status">وضعیت: فعال و آماده پخش</p>
+                </div>
+              </div>
+              <span class="text-xs font-bold text-primary font-mono" id="admin-video-percent">۱۰۰٪</span>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+              <div class="bg-primary h-2 rounded-full transition-all duration-500" id="video-progress-bar" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-white/5 flex gap-2">
+          <label class="btn-primary flex-1 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer shadow-md shadow-primary/20">
+            <span class="material-symbols-outlined text-[16px]">upload_file</span>
+            <span>آپلود / تعویض ویدیو</span>
+            <input type="file" accept="video/mp4,video/mkv,video/webm" class="hidden" onchange="handleAdminVideoUpload(event)"/>
+          </label>
+        </div>
+      </div>
+
+      <!-- Tools Package Management («پکیج ابزارها») -->
+      <div id="section-tools" class="glass-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-secondary text-2xl">build</span>
+              <h3 class="text-base font-bold text-white">پکیج ابزارهای دوره</h3>
+            </div>
+            <span class="text-[10px] bg-secondary/20 text-secondary px-2 py-0.5 rounded-full font-bold">فایل ZIP</span>
+          </div>
+
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex items-center justify-between">
+              <div class="flex items-center gap-3 overflow-hidden">
+                <span class="material-symbols-outlined text-tertiary text-2xl">folder_zip</span>
+                <div class="overflow-hidden">
+                  <p class="text-xs font-bold text-white truncate" id="admin-tools-name">DLS19_AGEDITION_Tools_Package_V2.zip</p>
+                  <p class="text-[10px] text-text-muted" id="admin-tools-meta">حجم: ۱.۲ گیگابایت • فعال</p>
+                </div>
+              </div>
+              <button onclick="document.getElementById('tools-file-input').click()" class="text-text-muted hover:text-white p-1 rounded transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-[18px]">edit</span>
+              </button>
+            </div>
+
+            <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+              <div class="bg-secondary h-2 rounded-full transition-all duration-500" id="tools-progress-bar" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-white/5 flex gap-2">
+          <label class="glass-panel text-secondary border border-secondary/30 flex-1 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer hover:bg-white/5 transition-colors">
+            <span class="material-symbols-outlined text-[16px]">upload</span>
+            <span>آپلود فایل جدید ZIP</span>
+            <input id="tools-file-input" type="file" accept=".zip,.rar,.7z" class="hidden" onchange="handleAdminToolsUpload(event)"/>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Payment Card Management («مدیریت کارت پرداخت») -->
+    <section id="section-card" class="glass-panel rounded-2xl p-6 border border-white/10 shadow-xl">
+      <div class="flex items-center justify-between mb-5">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-xl">credit_card</span>
+          <span>مدیریت تصویر و اطلاعات کارت پرداخت</span>
+        </h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div>
+          <!-- Current Card Preview -->
+          <div class="w-full aspect-[1.58/1] rounded-2xl overflow-hidden border border-white/10 shadow-xl relative group">
+            <div id="admin-card-img" class="bg-cover bg-center w-full h-full" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACf4qiS3DlSo0Ejw_uRMiaMTuPZC8SUf2hC7x92NtkWgq7xxEyEkFdBWqFP7_08n-25MZq1A5qqt-WuJE1cBjXU2-dPw-j3PJAFY0DvmzJccilCPfvypdUVN9FVHLoubJUthU6Xl5ODtK-hwE56T4c3ec5YC_ODYu60UbqLE0WlbvgUvfYr25Dpkup1JjBj2twGPaDVZYQAvGmaN4-tZ3zTScEIofnTAJ24MawBruMBSalnjwjDTkAIg')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+              <span id="admin-preview-holder" class="text-xs text-white">AGEDITION - علیرضا جلیلیان</span>
+              <span id="admin-preview-num" class="font-mono text-sm font-bold text-primary dir-ltr">6037-9975-1234-5678</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Edit Form -->
+        <form onsubmit="event.preventDefault(); saveCardSettings();" class="space-y-3.5 text-xs">
+          <div>
+            <label class="text-text-secondary block mb-1">شماره کارت بانکی</label>
+            <input id="admin-card-num-input" type="text" dir="ltr" class="glass-input w-full rounded-xl px-3.5 py-2.5 text-white font-mono" value="6037-9975-1234-5678"/>
+          </div>
+
+          <div>
+            <label class="text-text-secondary block mb-1">نام صاحب حساب</label>
+            <input id="admin-card-holder-input" type="text" class="glass-input w-full rounded-xl px-3.5 py-2.5 text-white" value="AGEDITION - علیرضا جلیلیان"/>
+          </div>
+
+          <div>
+            <label class="text-text-secondary block mb-1">نام بانک</label>
+            <input id="admin-card-bank-input" type="text" class="glass-input w-full rounded-xl px-3.5 py-2.5 text-white" value="بانک ملی ایران"/>
+          </div>
+
+          <div class="pt-2 flex gap-2">
+            <label class="glass-panel text-white border border-white/20 px-4 py-2.5 rounded-xl flex-1 text-center font-bold cursor-pointer hover:bg-white/10 transition-colors flex items-center justify-center gap-1">
+              <span class="material-symbols-outlined text-[16px]">add_photo_alternate</span>
+              <span>تعویض تصویر کارت</span>
+              <input type="file" accept="image/*" class="hidden" onchange="handleCardImageUpload(event)"/>
+            </label>
+            <button type="submit" class="btn-primary px-6 py-2.5 rounded-xl font-bold">
+              ذخیره تغییرات
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 5. User Feedback & Suggestions List -->
+    <section id="section-feedback" class="glass-panel rounded-2xl p-6 border border-white/10 shadow-xl">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-xl">reviews</span>
+          <span>نظرات و پیشنهادات ارسالی کاربران</span>
+        </h3>
+        <span class="text-xs text-text-muted" id="feedback-count-badge">۱ نظر</span>
+      </div>
+
+      <div class="space-y-3" id="feedbacks-container">
+        <!-- Feedbacks injected via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Send Message Modal -->
+  <div id="message-modal" class="fixed inset-0 z-[70] bg-black/70 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="glass-panel rounded-2xl p-6 max-w-md w-full border border-white/20 shadow-2xl animate-fade-in">
+      <div class="flex justify-between items-center mb-4 border-b border-white/10 pb-3">
+        <h3 class="text-base font-bold text-white flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-primary text-[20px]">chat</span>
+          <span>ارسال پیام اختصاصی به کاربر</span>
+        </h3>
+        <button onclick="closeMessageModal()" class="text-text-muted hover:text-white">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <form onsubmit="event.preventDefault(); sendAdminMessage();" class="space-y-4 text-xs">
+        <div>
+          <label class="text-text-secondary block mb-1">گیرنده پیام</label>
+          <input id="modal-msg-recipient" type="text" class="glass-input w-full rounded-xl px-3.5 py-2.5 text-white" readonly/>
+        </div>
+
+        <div>
+          <label class="text-text-secondary block mb-1">متن پیام</label>
+          <textarea id="modal-msg-content" rows="4" class="glass-input w-full rounded-xl p-3 text-white resize-none" placeholder="متن پیام خود را برای کاربر بنویسید..." required></textarea>
+        </div>
+
+        <div class="flex gap-2 pt-2">
+          <button type="submit" class="btn-primary flex-1 py-2.5 rounded-xl font-bold">ارسال پیام</button>
+          <button type="button" onclick="closeMessageModal()" class="btn-secondary px-4 py-2.5 rounded-xl">انصراف</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Reject Reason Modal -->
+  <div id="reject-modal" class="fixed inset-0 z-[70] bg-black/70 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="glass-panel rounded-2xl p-6 max-w-md w-full border border-error/30 shadow-2xl animate-fade-in">
+      <div class="flex justify-between items-center mb-4 border-b border-white/10 pb-3">
+        <h3 class="text-base font-bold text-error flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[20px]">cancel</span>
+          <span>رد رسید پرداخت</span>
+        </h3>
+        <button onclick="closeRejectModal()" class="text-text-muted hover:text-white">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <form onsubmit="event.preventDefault(); confirmRejectOrder();" class="space-y-4 text-xs">
+        <div>
+          <label class="text-text-secondary block mb-1">علت رد پرداخت (برای کاربر ارسال می‌شود):</label>
+          <textarea id="reject-reason-input" rows="3" class="glass-input w-full rounded-xl p-3 text-white resize-none" required>اطلاعات فیش واریزی ناخوانا است یا مبلغ واریزی مغایرت دارد. لطفاً رسید واضح ارسال کنید.</textarea>
+        </div>
+
+        <div class="flex gap-2 pt-2">
+          <button type="submit" class="btn-secondary text-error border-error/40 hover:bg-error/20 flex-1 py-2.5 rounded-xl font-bold">
+            تأیید و رد سفارش
+          </button>
+          <button type="button" onclick="closeRejectModal()" class="btn-secondary px-4 py-2.5 rounded-xl">انصراف</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    let allOrders = [];
+    let selectedOrder = null;
+    let currentZoom = 1;
+    let newCardImageBase64 = null;
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      checkAdminAuth();
+      await loadAdminDashboardData();
+    });
+
+    function checkAdminAuth() {
+      const user = Store.getUser();
+      const gate = document.getElementById("admin-gate");
+      if (user && user.email && user.email.toLowerCase() === CONFIG.PRIMARY_ADMIN_EMAIL.toLowerCase()) {
+        gate.classList.add("hidden");
+      } else {
+        gate.classList.remove("hidden");
+      }
+    }
+
+    async function handleAdminAuth() {
+      const email = document.getElementById("admin-email-input").value.trim();
+      if (email.toLowerCase() !== CONFIG.PRIMARY_ADMIN_EMAIL.toLowerCase()) {
+        showToast("دسترسی غیرمجاز: تنها ایمیل رسمی مدیر مجاز به ورود است.", "error");
+        return;
+      }
+
+      // Authenticate admin session
+      const adminUser = {
+        id: "admin-master",
+        fullName: "مدیریت سایت AGEDITION",
+        phone: "09120000000",
+        email: CONFIG.PRIMARY_ADMIN_EMAIL,
+        role: "admin",
+        createdAt: new Date().toISOString()
+      };
+      Store.setUser(adminUser);
+      document.getElementById("admin-gate").classList.add("hidden");
+      showToast("ورود موفقیت‌آمیز مدیریت.", "success");
+      await loadAdminDashboardData();
+    }
+
+    function handleAdminLogout() {
+      Store.setUser(null);
+      window.location.href = "index.html";
+    }
+
+    async function loadAdminDashboardData() {
+      allOrders = await Store.getAllOrders();
+      renderOrdersTable();
+      renderFeedbacks();
+      updateStats();
+
+      // Set first order as selected
+      if (allOrders.length > 0) {
+        selectOrder(allOrders[0].id);
+      }
+
+      // Load Course config to card settings
+      const course = await Store.getCourseConfig();
+      if (course) {
+        if (document.getElementById("admin-card-num-input")) {
+          document.getElementById("admin-card-num-input").value = course.cardNumber || "6037-9975-1234-5678";
+          document.getElementById("admin-preview-num").textContent = course.cardNumber || "6037-9975-1234-5678";
+        }
+        if (document.getElementById("admin-card-holder-input")) {
+          document.getElementById("admin-card-holder-input").value = course.cardHolder || "AGEDITION";
+          document.getElementById("admin-preview-holder").textContent = course.cardHolder || "AGEDITION";
+        }
+        if (document.getElementById("admin-card-bank-input")) {
+          document.getElementById("admin-card-bank-input").value = course.bankName || "بانک ملی ایران";
+        }
+        if (document.getElementById("admin-card-img") && course.paymentCardImage) {
+          document.getElementById("admin-card-img").style.backgroundImage = `url('${course.paymentCardImage}')`;
+        }
+        if (document.getElementById("admin-video-name")) {
+          document.getElementById("admin-video-name").textContent = course.videoFileName;
+        }
+        if (document.getElementById("admin-tools-name")) {
+          document.getElementById("admin-tools-name").textContent = course.toolsFileName;
+        }
+      }
+    }
+
+    function updateStats() {
+      const pending = allOrders.filter(o => o.status === "pending").length;
+      const approved = allOrders.filter(o => o.status === "approved").length;
+      
+      document.getElementById("stat-total-users").textContent = (2450 + allOrders.length).toLocaleString("fa-IR");
+      document.getElementById("stat-pending-orders").textContent = pending.toLocaleString("fa-IR");
+      document.getElementById("stat-approved-orders").textContent = (2440 + approved).toLocaleString("fa-IR");
+      
+      const revenue = (2440 + approved) * 400000;
+      document.getElementById("stat-revenue").textContent = revenue.toLocaleString("fa-IR") + " تومان";
+      document.getElementById("orders-count-label").textContent = `${allOrders.length.toLocaleString("fa-IR")} مورد`;
+
+      const urgent = document.getElementById("urgent-badge");
+      if (pending > 0) {
+        urgent.classList.remove("hidden");
+      } else {
+        urgent.classList.add("hidden");
+      }
+    }
+
+    function selectOrder(orderId) {
+      selectedOrder = allOrders.find(o => o.id === orderId);
+      if (!selectedOrder) return;
+
+      document.getElementById("receipt-user-name").textContent = selectedOrder.userName || "کاربر";
+      document.getElementById("receipt-order-id").textContent = `شماره سفارش: #${selectedOrder.id}`;
+      document.getElementById("receipt-user-phone").textContent = selectedOrder.phone || "-";
+      document.getElementById("receipt-amount-display").innerHTML = `${(selectedOrder.amount || 400000).toLocaleString("fa-IR")} <span class="text-xs text-primary/80">تومان</span>`;
+
+      if (selectedOrder.receiptImage) {
+        document.getElementById("active-receipt-img").src = selectedOrder.receiptImage;
+      }
+      resetZoom();
+    }
+
+    function renderOrdersTable() {
+      const tbody = document.getElementById("orders-table-body");
+      if (allOrders.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="py-4 text-center text-text-muted">سفارشی یافت نشد.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = allOrders.map(o => {
+        const isSelected = selectedOrder && selectedOrder.id === o.id;
+        const statusBadge = o.status === "approved" 
+          ? '<span class="bg-primary/20 text-primary px-2 py-0.5 rounded-full font-bold">تأیید شده</span>'
+          : o.status === "pending"
+          ? '<span class="bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full font-bold">در انتظار</span>'
+          : '<span class="bg-error/20 text-error px-2 py-0.5 rounded-full font-bold">رد شده</span>';
+
+        return `
+          <tr class="hover:bg-white/5 transition-colors cursor-pointer ${isSelected ? 'bg-primary/10' : ''}" onclick="selectOrder('${o.id}')">
+            <td class="py-3 font-mono">#${o.id}</td>
+            <td class="py-3 font-semibold text-white">${o.userName}</td>
+            <td class="py-3 font-mono text-text-secondary" dir="ltr">${o.phone}</td>
+            <td class="py-3 text-primary font-bold">${(o.amount || 400000).toLocaleString("fa-IR")} تومان</td>
+            <td class="py-3">${statusBadge}</td>
+            <td class="py-3">
+              <button onclick="event.stopPropagation(); selectOrder('${o.id}');" class="text-primary hover:underline font-bold">
+                مشاهده رسید
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    // Zoom & Pan Receipt Viewport
+    function zoomReceipt(delta) {
+      currentZoom = Math.max(0.5, Math.min(3.5, currentZoom + delta));
+      const img = document.getElementById("active-receipt-img");
+      img.style.transform = `scale(${currentZoom})`;
+      document.getElementById("receipt-zoom-level").textContent = `بزرگ‌نمایی: ${Math.round(currentZoom * 100)}٪`;
+    }
+
+    function resetZoom() {
+      currentZoom = 1;
+      const img = document.getElementById("active-receipt-img");
+      img.style.transform = `scale(1)`;
+      document.getElementById("receipt-zoom-level").textContent = `بزرگ‌نمایی: ۱۰۰٪`;
+    }
+
+    function toggleReceiptFullscreen() {
+      const elem = document.getElementById("receipt-viewport");
+      if (!document.fullscreenElement) {
+        elem.requestFullscreen().catch(err => console.log(err));
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    // Order Actions
+    async function approveCurrentOrder() {
+      if (!selectedOrder) return;
+      const btn = document.getElementById("btn-admin-approve");
+      btn.disabled = true;
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span> در حال تأیید...';
+
+      try {
+        await Store.approveOrder(selectedOrder.id);
+        showToast(`سفارش #${selectedOrder.id} با موفقیت تأیید شد و دسترسی کاربر فعال گردید.`, "success");
+        await loadAdminDashboardData();
+      } catch (err) {
+        showToast("خطا در تأیید سفارش.", "error");
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span>تأیید پرداخت</span>';
+      }
+    }
+
+    function rejectCurrentOrder() {
+      if (!selectedOrder) return;
+      document.getElementById("reject-modal").classList.remove("hidden");
+      document.getElementById("reject-modal").classList.add("flex");
+    }
+
+    function closeRejectModal() {
+      document.getElementById("reject-modal").classList.remove("flex");
+      document.getElementById("reject-modal").classList.add("hidden");
+    }
+
+    async function confirmRejectOrder() {
+      if (!selectedOrder) return;
+      const reason = document.getElementById("reject-reason-input").value.trim();
+      closeRejectModal();
+
+      try {
+        await Store.rejectOrder(selectedOrder.id, reason);
+        showToast(`سفارش #${selectedOrder.id} رد شد و پیام به کاربر ارسال گردید.`, "info");
+        await loadAdminDashboardData();
+      } catch (err) {
+        showToast("خطا در رد سفارش.", "error");
+      }
+    }
+
+    // Direct Message Modal
+    function openMessageModal() {
+      if (!selectedOrder) return;
+      document.getElementById("modal-msg-recipient").value = `${selectedOrder.userName} (${selectedOrder.phone})`;
+      document.getElementById("message-modal").classList.remove("hidden");
+      document.getElementById("message-modal").classList.add("flex");
+    }
+
+    function closeMessageModal() {
+      document.getElementById("message-modal").classList.remove("flex");
+      document.getElementById("message-modal").classList.add("hidden");
+    }
+
+    async function sendAdminMessage() {
+      if (!selectedOrder) return;
+      const content = document.getElementById("modal-msg-content").value.trim();
+      if (!content) return;
+
+      try {
+        await Store.sendMessage(selectedOrder.userId, content, selectedOrder.id);
+        closeMessageModal();
+        document.getElementById("modal-msg-content").value = "";
+        showToast("پیام با موفقیت برای کاربر ارسال شد.", "success");
+      } catch (err) {
+        showToast("خطا در ارسال پیام.", "error");
+      }
+    }
+
+    // Video Upload
+    function handleAdminVideoUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      showToast(`در حال آپلود ویدیوی جدید: ${file.name}...`, "info");
+      const bar = document.getElementById("video-progress-bar");
+      bar.style.width = "0%";
+      document.getElementById("admin-video-percent").textContent = "۰٪";
+
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += 15;
+        bar.style.width = `${Math.min(100, progress)}%`;
+        document.getElementById("admin-video-percent").textContent = `${Math.min(100, progress)}%`;
         
-        <!-- Dashboard Overview Section -->
-        <section>
-            <h2 class="text-xl sm:text-2xl font-bold text-text-primary mb-4">نمای کلی</h2>
-            
-            <div class="grid grid-cols-2 gap-4">
-                <!-- Stat Card 1 -->
-                <div class="glass-card rounded-2xl p-5 flex flex-col justify-between border border-white/10">
-                    <div class="flex justify-between items-start mb-3">
-                        <div class="p-2.5 bg-primary/10 rounded-xl border border-primary/20">
-                            <span class="material-symbols-outlined text-primary">group</span>
-                        </div>
-                        <span class="text-primary text-xs font-bold bg-primary/10 px-2 py-0.5 rounded-full">+۱۲٪</span>
-                    </div>
-                    <div>
-                        <p class="text-xs text-text-muted mb-1">کل کاربران ثبت‌نامی</p>
-                        <p class="text-xl sm:text-2xl font-bold text-text-primary">۲,۴۵۰ <span class="text-xs font-normal text-text-muted">نفر</span></p>
-                    </div>
-                </div>
+        if (progress >= 100) {
+          clearInterval(interval);
+          Store.updateCourseConfig({ videoFileName: file.name, videoStatus: "active" });
+          document.getElementById("admin-video-name").textContent = file.name;
+          showToast("ویدیوی دوره با موفقیت آپلود و جایگزین شد.", "success");
+        }
+      }, 300);
+    }
 
-                <!-- Stat Card 2 -->
-                <div class="glass-card rounded-2xl p-5 flex flex-col justify-between border border-white/10">
-                    <div class="flex justify-between items-start mb-3">
-                        <div class="p-2.5 bg-error/10 rounded-xl border border-error/20">
-                            <span class="material-symbols-outlined text-error">pending_actions</span>
-                        </div>
-                        <span id="pending-badge" class="text-error text-xs font-bold bg-error/10 px-2 py-0.5 rounded-full animate-pulse">۵ نیازمند بررسی</span>
-                    </div>
-                    <div>
-                        <p class="text-xs text-text-muted mb-1">سفارشات در انتظار</p>
-                        <p id="pending-count" class="text-xl sm:text-2xl font-bold text-text-primary">۱۸ <span class="text-xs font-normal text-text-muted">مورد</span></p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    // Tools Upload
+    function handleAdminToolsUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
 
-        <!-- Receipt Review Section (Primary View) -->
-        <section id="receipt-review-section">
-            <div class="flex items-center justify-between mb-4">
-                <h2 class="text-xl sm:text-2xl font-bold text-text-primary flex items-center gap-2">
-                    <span class="material-symbols-outlined text-primary">receipt_long</span>
-                    <span>بررسی رسید بانکی</span>
-                </h2>
-                <span class="px-3 py-1 rounded-full bg-error/20 text-error text-xs font-bold border border-error/30 animate-pulse">اقدام فوری</span>
-            </div>
+      showToast(`در حال آپلود پکیج ابزارها: ${file.name}...`, "info");
+      const bar = document.getElementById("tools-progress-bar");
+      bar.style.width = "0%";
 
-            <div class="glass-card rounded-2xl p-5 sm:p-6 flex flex-col gap-6 border border-white/10 shadow-2xl">
-                
-                <!-- User Info Header -->
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 rounded-full bg-surface-container-high overflow-hidden border-2 border-primary/40 flex-shrink-0">
-                            <img class="w-full h-full object-cover" 
-                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCynUHvxMHBzLglehXPv49-C3ONKHnmWw11QFicPJyo0FPAUsJQDNmm8YAiR_DzoXF3n-FH4p_q96S_2B93yj8D8Vb5HXa17aAw85_Uq2-F5OKG1HzrYnzhSoH5A8bOotAU6R4aIokKPCqjeK8rz1ARV27YBt5t-HmrzhHO2pCLhudzNeaTPP7j1MW_S377ZPorREqy6gkSAPEKnNDx6nxJlau2Q7tQbS5dQPA1aSMqia39HoTT77QUBA" 
-                                 alt="تصویر کاربر خریدار"/>
-                        </div>
-                        <div>
-                            <h3 id="reviewer-username" class="text-base sm:text-lg font-bold text-text-primary">علی رضایی</h3>
-                            <p class="text-xs text-text-muted">شماره سفارش: <span class="font-mono text-primary">#۸۹۰۴۲</span> • شماره تماس: <span dir="ltr">0912-345-6789</span></p>
-                        </div>
-                    </div>
-                    
-                    <div class="text-right sm:text-left bg-surface-container-low sm:bg-transparent p-3 sm:p-0 rounded-xl">
-                        <p class="text-xs text-text-muted">مبلغ واریزی فیش</p>
-                        <p class="text-xl font-black text-primary" dir="ltr">400,000 <span class="text-xs font-normal">تومان</span></p>
-                    </div>
-                </div>
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += 20;
+        bar.style.width = `${Math.min(100, progress)}%`;
+        
+        if (progress >= 100) {
+          clearInterval(interval);
+          const sizeStr = (file.size / (1024 * 1024)).toFixed(1) + " MB";
+          Store.updateCourseConfig({ toolsFileName: file.name, toolsFileSize: sizeStr, toolsStatus: "active" });
+          document.getElementById("admin-tools-name").textContent = file.name;
+          document.getElementById("admin-tools-meta").textContent = `حجم: ${sizeStr} • فعال`;
+          showToast("پکیج ابزارهای ZIP با موفقیت بروزرسانی شد.", "success");
+        }
+      }, 250);
+    }
 
-                <!-- Interactive Receipt Preview Area with Zoom & Pan -->
-                <div class="relative w-full h-[380px] sm:h-[440px] bg-obsidian-deep rounded-2xl overflow-hidden border border-white/15 flex flex-col shadow-inner">
-                    <!-- Zoom & Control Toolbar -->
-                    <div class="absolute top-3 left-3 flex gap-2 z-20">
-                        <button onclick="zoomReceipt(0.2)" title="بزرگ‌نمایی" class="p-2.5 rounded-xl bg-black/60 hover:bg-black/80 text-white backdrop-blur-md border border-white/20 transition-all active:scale-95">
-                            <span class="material-symbols-outlined text-[18px]">zoom_in</span>
-                        </button>
-                        <button onclick="zoomReceipt(-0.2)" title="کوچک‌نمایی" class="p-2.5 rounded-xl bg-black/60 hover:bg-black/80 text-white backdrop-blur-md border border-white/20 transition-all active:scale-95">
-                            <span class="material-symbols-outlined text-[18px]">zoom_out</span>
-                        </button>
-                        <button onclick="resetReceiptZoom()" title="اندازه پیش‌فرض" class="p-2.5 rounded-xl bg-black/60 hover:bg-black/80 text-white backdrop-blur-md border border-white/20 transition-all active:scale-95">
-                            <span class="material-symbols-outlined text-[18px]">restart_alt</span>
-                        </button>
-                        <button onclick="toggleReceiptFullscreen()" title="تمام صفحه" class="p-2.5 rounded-xl bg-black/60 hover:bg-black/80 text-white backdrop-blur-md border border-white/20 transition-all active:scale-95">
-                            <span class="material-symbols-outlined text-[18px]">fullscreen</span>
-                        </button>
-                    </div>
+    // Card Image and Settings
+    function handleCardImageUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
 
-                    <!-- Receipt Image Container -->
-                    <div id="receipt-container" class="flex-1 w-full h-full flex items-center justify-center overflow-hidden p-4 cursor-grab select-none">
-                        <img id="receipt-image" 
-                             class="max-w-full max-h-full object-contain rounded-lg drop-shadow-2xl transition-transform duration-200" 
-                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX_sN55-Na6b4BI-nu59vfx3LrPjQ5hXDbTNnB8ZyGNe-YtHMh3R3_mIE1-qsZLEVhtmjuxEDSG94bSXg6dNvAEO0_6EPtnUIz4c1hbDvD_zfbnwJ_ahDQfVwuX1chgybr9DvXtKCyzvr2CI9000eWUOCHB89OBOjT_BKUn5XfrY8QnLSMJ2YH6vFYjEniUQDdZ3RpVAjHigpBdKBcahZJ-rFErTHA9xoyN1ChQYnTp5k4Cp9uX9P3LA" 
-                             alt="رسید واریز وجه بانکی"/>
-                    </div>
-                </div>
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        newCardImageBase64 = event.target.result;
+        document.getElementById("admin-card-img").style.backgroundImage = `url('${newCardImageBase64}')`;
+        showToast("تصویر کارت بارگذاری شد. لطفاً ذخیره تغییرات را بزنید.", "info");
+      };
+      reader.readAsDataURL(file);
+    }
 
-                <!-- Admin Action Buttons -->
-                <div class="flex flex-col sm:flex-row gap-3 mt-1">
-                    <button onclick="approveCurrentReceipt(this)" class="btn-primary flex-1 py-3.5 px-6 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all active:scale-95">
-                        <span class="material-symbols-outlined text-[20px]">check_circle</span>
-                        <span>تأیید پرداخت و فعال‌سازی دوره</span>
-                    </button>
-                    
-                    <button onclick="rejectCurrentReceipt(this)" class="btn-secondary flex-1 py-3.5 px-6 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 hover:bg-error/20 hover:text-error hover:border-error/50 transition-all active:scale-95">
-                        <span class="material-symbols-outlined text-[20px]">cancel</span>
-                        <span>رد فیش پرداختی</span>
-                    </button>
-                    
-                    <button onclick="sendAdminDirectMessage()" class="glass-panel w-full sm:w-auto py-3.5 px-6 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 hover:bg-white/10 transition-colors text-text-primary">
-                        <span class="material-symbols-outlined text-[20px]">chat</span>
-                        <span>ارسال پیام تلگرام</span>
-                    </button>
-                </div>
-            </div>
-        </section>
+    async function saveCardSettings() {
+      const cardNumber = document.getElementById("admin-card-num-input").value.trim();
+      const cardHolder = document.getElementById("admin-card-holder-input").value.trim();
+      const bankName = document.getElementById("admin-card-bank-input").value.trim();
 
-        <!-- Course Video & Tools Management Sections -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <!-- Video Upload Management -->
-            <div class="glass-card rounded-2xl p-6 border border-white/10">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="material-symbols-outlined text-primary text-2xl">play_circle</span>
-                    <h3 class="text-lg font-bold text-text-primary">مدیریت ویدیوی دوره</h3>
-                </div>
-                
-                <div class="space-y-4">
-                    <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-text-muted">movie</span>
-                            <div>
-                                <p class="text-sm font-medium text-text-primary">فصل ۱ - قسمت ۳.mp4</p>
-                                <p class="text-xs text-text-muted">در حال آپلود به سرور پرسرعت...</p>
-                            </div>
-                        </div>
-                        <span class="text-xs font-bold text-primary font-mono">65%</span>
-                    </div>
+      const updates = { cardNumber, cardHolder, bankName };
+      if (newCardImageBase64) updates.paymentCardImage = newCardImageBase64;
 
-                    <!-- Progress Bar -->
-                    <div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
-                        <div class="bg-primary h-2.5 rounded-full transition-all duration-500 shadow-[0_0_10px_rgba(80,224,138,0.5)]" style="width: 65%"></div>
-                    </div>
+      await Store.updateCourseConfig(updates);
+      document.getElementById("admin-preview-num").textContent = cardNumber;
+      document.getElementById("admin-preview-holder").textContent = cardHolder;
+      showToast("اطلاعات کارت پرداخت با موفقیت ذخیره شد.", "success");
+    }
 
-                    <div class="flex justify-between items-center text-xs text-text-muted pt-1">
-                        <span>سرعت آپلود: 12.4 MB/s</span>
-                        <button onclick="showToast('عملیات آپلود در پس‌زمینه فعال است.', 'info')" class="text-primary hover:underline">
-                            مدیریت ویدیوها
-                        </button>
-                    </div>
-                </div>
-            </div>
+    // Feedbacks
+    async function renderFeedbacks() {
+      const feedbacks = await Store.getFeedbacks();
+      const container = document.getElementById("feedbacks-container");
+      document.getElementById("feedback-count-badge").textContent = `${feedbacks.length.toLocaleString("fa-IR")} نظر`;
 
-            <!-- Tools Package Management -->
-            <div class="glass-card rounded-2xl p-6 border border-white/10">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="material-symbols-outlined text-secondary text-2xl">build</span>
-                    <h3 class="text-lg font-bold text-text-primary">پکیج ابزارها</h3>
-                </div>
+      if (feedbacks.length === 0) {
+        container.innerHTML = '<div class="p-4 text-center text-xs text-text-muted">هنوز نظری ثبت نشده است.</div>';
+        return;
+      }
 
-                <div class="space-y-4">
-                    <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-tertiary">folder_zip</span>
-                            <div>
-                                <p class="text-sm font-medium text-text-primary">طراحی رابط کاربری پیشرفته</p>
-                                <p class="text-xs text-text-muted">وضعیت: <span class="text-primary font-semibold">فعال (آماده دانلود)</span></p>
-                            </div>
-                        </div>
-                        
-                        <button onclick="promptEditPackage()" class="p-2 text-text-muted hover:text-white rounded-lg hover:bg-white/5 transition-colors">
-                            <span class="material-symbols-outlined text-[20px]">edit</span>
-                        </button>
-                    </div>
-
-                    <button onclick="showToast('لینک مستقیم پکیج بررسی و بروزرسانی شد.', 'success')" class="w-full glass-panel py-2.5 rounded-xl text-xs text-secondary font-semibold hover:bg-white/5 transition-all flex items-center justify-center gap-1.5 border border-secondary/30">
-                        <span class="material-symbols-outlined text-[16px]">sync</span>
-                        <span>بروزرسانی فایل پکیج در سرور</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Bottom Navigation (Mobile Only) -->
-    <nav class="md:hidden fixed bottom-0 w-full z-50 glass-panel border-t-0 shadow-[0_-20px_40px_rgba(0,0,0,0.5)] pb-[env(safe-area-inset-bottom)]">
-        <div class="flex justify-around items-center h-16 px-4">
-            <a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant hover:text-primary transition-colors" href="index.html">
-                <span class="material-symbols-outlined text-[22px]">home</span>
-                <span class="text-[10px]">خانه</span>
-            </a>
-            <a class="flex flex-col items-center gap-1 p-2 text-primary bg-primary-container/20 rounded-xl px-3" href="admin.html">
-                <span class="material-symbols-outlined text-[22px] fill-1">receipt_long</span>
-                <span class="text-[10px]">رسیدها</span>
-            </a>
-            <a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant hover:text-primary transition-colors" href="dashboard.html">
-                <span class="material-symbols-outlined text-[22px]">group</span>
-                <span class="text-[10px]">کاربران</span>
-            </a>
-            <a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant hover:text-primary transition-colors" href="contact.html">
-                <span class="material-symbols-outlined text-[22px]">settings</span>
-                <span class="text-[10px]">تنظیمات</span>
-            </a>
+      container.innerHTML = feedbacks.map(f => `
+        <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex flex-col gap-1.5 text-xs">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-primary">${f.userName}</span>
+            <span class="text-[11px] text-text-muted">${new Date(f.createdAt).toLocaleDateString("fa-IR")}</span>
+          </div>
+          <p class="text-white leading-relaxed pt-1 border-t border-white/5">${f.message}</p>
         </div>
-    </nav>
+      `).join("");
+    }
 
-    <!-- Admin Interactive Logic -->
-    <script>
-        let currentZoom = 1;
-        const receiptImg = document.getElementById('receipt-image');
-
-        function zoomReceipt(factor) {
-            currentZoom = Math.min(Math.max(0.5, currentZoom + factor), 3.0);
-            if (receiptImg) {
-                receiptImg.style.transform = `scale(${currentZoom})`;
-            }
-        }
-
-        function resetReceiptZoom() {
-            currentZoom = 1;
-            if (receiptImg) {
-                receiptImg.style.transform = 'scale(1)';
-            }
-        }
-
-        function toggleReceiptFullscreen() {
-            const container = document.getElementById('receipt-container');
-            if (!document.fullscreenElement) {
-                container.requestFullscreen().catch(err => {
-                    showToast('امکان تمام صفحه در پیش‌نمایش وجود ندارد.', 'info');
-                });
-            } else {
-                document.exitFullscreen();
-            }
-        }
-
-        function approveCurrentReceipt(btn) {
-            btn.disabled = true;
-            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> در حال تأیید...';
-            
-            setTimeout(() => {
-                showToast('سفارش #۸۹۰۴۲ تأیید شد و دسترسی کاربر فعال گردید.', 'success');
-                btn.innerHTML = '<span class="material-symbols-outlined">check</span> تأیید شد';
-                btn.classList.add('bg-tertiary-container');
-
-                const pendingBadge = document.getElementById('pending-badge');
-                const pendingCount = document.getElementById('pending-count');
-                if (pendingBadge) pendingBadge.innerText = '۴ نیازمند بررسی';
-                if (pendingCount) pendingCount.innerHTML = '۱۷ <span class="text-xs font-normal text-text-muted">مورد</span>';
-            }, 800);
-        }
-
-        function rejectCurrentReceipt(btn) {
-            const reason = prompt('دلیل رد فیش پرداختی را بنویسید (مثلاً: ناخوانا بودن رسید یا مغایرت مبلغ):', 'تصویر فیش ناخوانا است، لطفاً مجدداً ارسال کنید.');
-            if (reason) {
-                showToast('فیش با پیام «' + reason + '» رد شد.', 'error');
-                btn.innerText = 'رد شد';
-                btn.classList.add('text-error', 'border-error');
-            }
-        }
-
-        function sendAdminDirectMessage() {
-            const msg = prompt('متن پیام به کاربر در تلگرام:', 'رسید شما بررسی و تایید گردید. فایل‌های دوره برای شما فعال شد.');
-            if (msg) {
-                window.open(`https://t.me/AgeditionAdmin?text=${encodeURIComponent(msg)}`, '_blank');
-            }
-        }
-
-        function promptEditPackage() {
-            const newName = prompt('نام جدید پکیج ابزارها:', 'طراحی رابط کاربری پیشرفته + شیدر چمن 2024');
-            if (newName) {
-                showToast('اطلاعات پکیج بروزرسانی شد.', 'success');
-            }
-        }
-    </script>
-    <script src="assets/js/main.js"></script>
+    function closeDrawer() {
+      const drawer = document.getElementById("nav-drawer");
+      const overlay = document.getElementById("drawer-overlay");
+      if (drawer) drawer.style.transform = "translateX(100%)";
+      if (overlay) overlay.classList.add("hidden");
+    }
+  </script>
 </body>
 </html>

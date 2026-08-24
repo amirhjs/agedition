@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="fa">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <title>پشتیبانی و پیام‌ها | AGEDITION</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#08080a",
+            "obsidian-deep": "#040406",
+            "obsidian-surface": "#0e0e12",
+            "primary": "#10b981",
+            "primary-container": "#059669",
+            "primary-fixed": "#6ee7b7",
+            "secondary": "#34d399",
+            "secondary-container": "#047857",
+            "tertiary": "#10b981",
+            "tertiary-container": "#065f46",
+            "on-background": "#f1f5f9",
+            "text-primary": "#FFFFFF",
+            "text-secondary": "#94a3b8",
+            "text-muted": "#64748b",
+            "error": "#f87171",
+            "error-container": "#7f1d1d",
+            "surface": "#0e0e12",
+            "surface-bright": "#1e293b",
+            "surface-container-lowest": "#040406",
+            "surface-container-low": "#0b0f14",
+            "surface-container": "#111827",
+            "surface-container-high": "#1f2937",
+            "surface-container-highest": "#374151",
+            "surface-variant": "#1e293b",
+            "on-surface": "#f1f5f9",
+            "on-surface-variant": "#94a3b8",
+            "outline": "rgba(255, 255, 255, 0.1)",
+            "outline-variant": "rgba(255, 255, 255, 0.06)",
+            "on-primary": "#000000",
+            "on-primary-fixed": "#000000"
+          },
+          fontFamily: {
+            sans: ["Vazirmatn", "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen pb-28 pt-20 relative overflow-x-hidden bg-background text-on-background selection:bg-primary selection:text-on-primary">
+  <div class="ambient-glow"></div>
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-obsidian-surface/70 backdrop-blur-xl border-b border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+    <div class="flex justify-between items-center px-4 sm:px-8 h-16 max-w-6xl mx-auto">
+      <button aria-label="Open Menu" class="text-on-surface-variant hover:bg-white/5 active:scale-95 transition-transform p-2 rounded-full" id="menu-btn">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="text-xl sm:text-2xl font-bold tracking-tight text-primary">AGEDITION</span>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="dashboard.html" class="btn-secondary text-xs px-3.5 py-1.5 rounded-lg flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">person</span>
+          <span class="hidden sm:inline">داشبورد</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <nav class="fixed inset-y-0 right-0 z-[60] bg-obsidian-deep/90 backdrop-blur-[30px] border-l border-white/10 shadow-2xl flex flex-col p-6 w-72 max-w-full" id="nav-drawer" style="transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+    <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
+      <div class="text-xl font-bold text-primary">AGEDITION</div>
+      <button aria-label="Close Menu" class="text-on-surface-variant hover:bg-white/5 p-2 rounded-full active:scale-95 transition-transform" id="close-menu-btn">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    
+    <div class="flex flex-col gap-2 flex-1">
+      <a class="nav-item text-on-surface-variant flex items-center gap-4 py-3.5 px-4 hover:text-primary hover:bg-white/5 rounded-xl transition-all" href="index.html">
+        <span class="material-symbols-outlined">home</span>
+        <span class="font-medium text-sm">صفحه اصلی</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-4 py-3.5 px-4 hover:text-primary hover:bg-white/5 rounded-xl transition-all" href="course.html">
+        <span class="material-symbols-outlined">school</span>
+        <span class="font-medium text-sm">معرفی دوره</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-4 py-3.5 px-4 hover:text-primary hover:bg-white/5 rounded-xl transition-all" href="register.html">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <span class="font-medium text-sm">خرید و ثبت‌نام</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-4 py-3.5 px-4 hover:text-primary hover:bg-white/5 rounded-xl transition-all" href="dashboard.html">
+        <span class="material-symbols-outlined">person</span>
+        <span class="font-medium text-sm">داشبورد کاربری</span>
+      </a>
+      <a class="nav-item text-primary flex items-center gap-4 py-3.5 px-4 bg-primary-container/20 rounded-xl transition-all" href="support.html">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">help</span>
+        <span class="font-medium text-sm">پشتیبانی و پیام‌ها</span>
+      </a>
+    </div>
+  </nav>
+  <div class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm" id="drawer-overlay"></div>
+
+  <!-- Main Content -->
+  <main class="relative z-10 px-4 max-w-4xl mx-auto flex flex-col gap-6 mt-4">
+    
+    <div class="flex items-center justify-between">
+      <div>
+        <h1 class="text-xl sm:text-2xl font-bold text-white">مرکز پشتیبانی و پیام‌های مدیریت</h1>
+        <p class="text-xs text-text-secondary mt-0.5">پیام‌ها و اعلان‌های اختصاصی شما</p>
+      </div>
+      <a href="dashboard.html" class="text-xs text-secondary hover:underline flex items-center gap-1">
+        <span>بازگشت به داشبورد</span>
+        <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+      </a>
+    </div>
+
+    <!-- Admin Messages List -->
+    <section class="glass-panel rounded-2xl p-6 shadow-xl border border-white/10">
+      <div class="flex justify-between items-center mb-5 border-b border-white/10 pb-3">
+        <h2 class="text-base font-bold text-white flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-xl">forum</span>
+          <span>پیام‌های دریافتی از مدیریت</span>
+        </h2>
+        <span id="msg-count-badge" class="text-xs bg-primary/20 text-primary border border-primary/30 px-2.5 py-0.5 rounded-full font-bold">
+          ۱ پیام
+        </span>
+      </div>
+
+      <div class="space-y-3" id="messages-list-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Send Inquiry / Feedback -->
+    <section class="glass-panel rounded-2xl p-6 shadow-xl border border-white/10">
+      <h2 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-xl">contact_mail</span>
+        <span>ارسال سوال یا پیام جدید به مدیریت</span>
+      </h2>
+      <p class="text-xs text-text-secondary mb-4">
+        چنانچه در رابطه با خرید، پرداخت یا محتوای دوره سوالی دارید، متن خود را ارسال فرمایید:
+      </p>
+
+      <form onsubmit="event.preventDefault(); submitInquiry();" class="flex flex-col gap-3">
+        <textarea 
+          id="inquiry-textarea" 
+          class="w-full bg-black/25 border border-white/10 rounded-xl p-4 text-xs sm:text-sm text-white placeholder:text-text-muted focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none transition-colors glass-panel" 
+          placeholder="متن پیام یا سوال خود را اینجا بنویسید..." 
+          rows="4"
+          required
+        ></textarea>
+        <div class="flex justify-end">
+          <button id="btn-inquiry" class="btn-primary text-on-primary-fixed text-xs font-bold px-7 py-3 rounded-xl hover:opacity-90 transition-opacity flex items-center gap-1.5 shadow-md shadow-primary/20 cursor-pointer" type="submit">
+            <span class="material-symbols-outlined text-[18px]">send</span>
+            <span>ارسال به پشتیبانی</span>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Direct Contact Info -->
+    <section class="glass-card rounded-2xl p-6 border border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-right">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-primary/15 text-primary flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[26px]">alternate_email</span>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-white">ارتباط مستقیم از طریق تلگرام و ایمیل</h3>
+          <p class="text-xs text-text-muted mt-0.5">پاسخگویی در تمامی روزهای هفته</p>
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <a href="mailto:ajalilian446@gmail.com" class="btn-secondary px-4 py-2 rounded-xl text-xs flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">mail</span>
+          <span dir="ltr">ajalilian446@gmail.com</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    let currentUser = null;
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      currentUser = Store.getUser();
+      if (!currentUser) {
+        currentUser = {
+          id: "guest-" + Date.now().toString(36),
+          fullName: "کاربر مهمان",
+          phone: "09120000000",
+          email: "",
+          role: "user",
+          createdAt: new Date().toISOString()
+        };
+        Store.setUser(currentUser);
+      }
+
+      await renderMessages();
+    });
+
+    async function renderMessages() {
+      const list = await Store.getMessages(currentUser.id);
+      const container = document.getElementById("messages-list-container");
+      document.getElementById("msg-count-badge").textContent = `${list.length.toLocaleString("fa-IR")} پیام`;
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div class="p-8 text-center text-xs text-text-muted bg-surface-container-low rounded-xl border border-white/5">
+            هیچ پیامی برای شما ثبت نشده است.
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = list.map(m => `
+        <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex flex-col gap-2">
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-bold text-primary flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px]">support_agent</span>
+              مدیریت AGEDITION
+            </span>
+            <span class="text-[11px] text-text-muted">${new Date(m.createdAt).toLocaleDateString("fa-IR")}</span>
+          </div>
+          <p class="text-xs sm:text-sm text-white leading-relaxed pt-1 border-t border-white/5">
+            ${m.content}
+          </p>
+        </div>
+      `).join("");
+    }
+
+    async function submitInquiry() {
+      const textarea = document.getElementById("inquiry-textarea");
+      const msg = textarea.value.trim();
+      if (!msg) return;
+
+      const btn = document.getElementById("btn-inquiry");
+      btn.disabled = true;
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">sync</span> در حال ارسال...';
+
+      try {
+        await Store.sendFeedback(msg);
+        textarea.value = "";
+        showToast("پیام شما با موفقیت برای مدیریت ارسال گردید.", "success");
+      } catch (err) {
+        showToast("خطا در ارسال پیام.", "error");
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">send</span><span>ارسال به پشتیبانی</span>';
+      }
+    }
+  </script>
+</body>
+</html>

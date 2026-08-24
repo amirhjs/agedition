@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="fa">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <title>معرفی دوره و پکیج ابزارها | AGEDITION</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#08080a",
+            "obsidian-deep": "#040406",
+            "obsidian-surface": "#0e0e12",
+            "primary": "#10b981",
+            "primary-container": "#059669",
+            "primary-fixed": "#6ee7b7",
+            "secondary": "#34d399",
+            "secondary-container": "#047857",
+            "tertiary": "#10b981",
+            "tertiary-container": "#065f46",
+            "on-background": "#f1f5f9",
+            "text-primary": "#FFFFFF",
+            "text-secondary": "#94a3b8",
+            "text-muted": "#64748b",
+            "error": "#f87171",
+            "error-container": "#7f1d1d",
+            "surface": "#0e0e12",
+            "surface-bright": "#1e293b",
+            "surface-container-lowest": "#040406",
+            "surface-container-low": "#0b0f14",
+            "surface-container": "#111827",
+            "surface-container-high": "#1f2937",
+            "surface-container-highest": "#374151",
+            "surface-variant": "#1e293b",
+            "on-surface": "#f1f5f9",
+            "on-surface-variant": "#94a3b8",
+            "outline": "rgba(255, 255, 255, 0.1)",
+            "outline-variant": "rgba(255, 255, 255, 0.06)",
+            "on-primary": "#000000",
+            "on-primary-fixed": "#000000"
+          },
+          fontFamily: {
+            sans: ["Vazirmatn", "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="relative min-h-screen bg-background text-on-background selection:bg-primary selection:text-on-primary">
+  <div class="ambient-glow"></div>
+  <div class="ambient-glow-bottom"></div>
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-obsidian-surface/70 backdrop-blur-xl border-b border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+    <div class="flex justify-between items-center px-4 sm:px-8 h-16 max-w-6xl mx-auto">
+      <button aria-label="Open Menu" class="text-on-surface-variant hover:bg-white/5 p-2 rounded-full active:scale-95 transition-transform" id="menu-btn">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="text-xl sm:text-2xl font-bold tracking-tight text-primary">AGEDITION</span>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="register.html" class="btn-primary text-xs px-3.5 py-1.5 rounded-lg flex items-center gap-1">
+          <span>خرید دوره</span>
+          <span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Drawer (Mobile) -->
+  <nav class="fixed inset-y-0 right-0 z-[60] bg-obsidian-deep/90 backdrop-blur-[30px] border-l border-white/10 shadow-2xl flex flex-col p-6 w-72 max-w-full" id="nav-drawer" style="transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+    <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
+      <div class="text-xl font-bold text-primary">AGEDITION</div>
+      <button aria-label="Close Menu" class="text-on-surface-variant hover:bg-white/5 p-2 rounded-full active:scale-95 transition-transform" id="close-menu-btn">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    
+    <div class="flex flex-col gap-2 flex-1">
+      <a class="nav-item text-on-surface-variant flex items-center gap-4 py-3.5 px-4 hover:text-primary hover:bg-white/5 rounded-xl transition-all" href="index.html">
+        <span class="material-symbols-outlined">home</span>
+        <span class="font-medium text-sm">صفحه اصلی</span>
+      </a>
+      <a class="nav-item text-primary flex items-center gap-4 py-3.5 px-4 bg-primary-container/20 rounded-xl transition-all" href="course.html">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+        <span class="font-medium text-sm">معرفی دوره</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-4 py-3.5 px-4 hover:text-primary hover:bg-white/5 rounded-xl transition-all" href="register.html">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <span class="font-medium text-sm">خرید و ثبت‌نام</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-4 py-3.5 px-4 hover:text-primary hover:bg-white/5 rounded-xl transition-all" href="dashboard.html">
+        <span class="material-symbols-outlined">person</span>
+        <span class="font-medium text-sm">داشبورد کاربری</span>
+      </a>
+      <a class="nav-item text-on-surface-variant flex items-center gap-4 py-3.5 px-4 hover:text-primary hover:bg-white/5 rounded-xl transition-all" href="support.html">
+        <span class="material-symbols-outlined">help</span>
+        <span class="font-medium text-sm">پشتیبانی و پیام‌ها</span>
+      </a>
+    </div>
+  </nav>
+  <div class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm" id="drawer-overlay"></div>
+
+  <!-- Main Content -->
+  <main class="pt-24 pb-28 px-4 max-w-4xl mx-auto flex flex-col gap-8 relative z-10">
+    
+    <!-- Hero Banner -->
+    <section class="glass-panel rounded-2xl p-6 sm:p-8 border border-white/10 overflow-hidden relative">
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="w-full md:w-1/2 aspect-video rounded-xl overflow-hidden border border-white/10 relative shadow-2xl">
+          <img 
+            class="w-full h-full object-cover" 
+            alt="DLS 2019 Edition Course Banner" 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFneTEQpKE2OQIaFJ9Az8k9ZDt2Ki97yI7qiPedUGU0kAuVcs6_03D24-Vr3U7shfGD6O0NKY85SrNG1n1GIbav51WkYJDM18RebY5FOK0hMzEGE3WaDIR-I6voyZLl_20XRorp1ZUCFS_M4zdcqnfvtYKHiGmUZmyqKYdSx4qCdygLx8jYCw8jd7dJjktb12LpxxZ4NX-8b9FkrCDp8NFVAymJqunoJSYIlLLMiPqZn9IhpbzlM2brw"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-obsidian-deep/80 to-transparent"></div>
+          <div class="absolute bottom-3 right-3 bg-obsidian-surface/90 backdrop-blur-md px-3 py-1 rounded-lg text-xs text-primary border border-white/10 font-medium">
+            مدت: ۱ ساعت کامل
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 flex flex-col gap-3 text-right">
+          <div class="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-semibold">
+            <span class="material-symbols-outlined text-[16px]">verified</span>
+            محصول ویژه AGEDITION
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+            دوره جامع ساخت ادیشن Dream League Soccer 2019 + پکیج ابزارها
+          </h1>
+          <p class="text-sm text-text-secondary leading-relaxed">
+            تنها دوره اختصاصی و کاربردی برای شخصی‌سازی کامل دیتابیس، استادیوم، کیت‌ها، لوگو، گرافیک منوها، صداگذاری و ساخت فایل APK آماده نصب بازی محبوب DLS 19.
+          </p>
+          <div class="flex items-baseline gap-2 mt-2">
+            <span class="text-2xl font-extrabold text-primary">۴۰۰,۰۰۰</span>
+            <span class="text-xs text-primary/80 font-medium">تومان</span>
+          </div>
+          <div class="flex gap-3 mt-2">
+            <a href="register.html" class="btn-primary flex-1 py-3 rounded-xl font-bold text-center text-sm flex items-center justify-center gap-2">
+              <span>خرید آنلاین دوره</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Highlights -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="glass-card rounded-xl p-5 border border-white/10">
+        <span class="material-symbols-outlined text-primary text-3xl mb-2">video_file</span>
+        <h3 class="text-base font-bold text-white mb-1">ویدیوی کامل ۱ ساعته</h3>
+        <p class="text-xs text-text-secondary leading-relaxed">
+          بدون پراکندگی یا بخش‌های گیج‌کننده؛ تمام مباحث در یک فایل ویدیویی باکیفیت و ساختاریافته تدریس شده است.
+        </p>
+      </div>
+
+      <div class="glass-card rounded-xl p-5 border border-white/10">
+        <span class="material-symbols-outlined text-secondary text-3xl mb-2">folder_zip</span>
+        <h3 class="text-base font-bold text-white mb-1">پکیج ابزارهای کامل (ZIP)</h3>
+        <p class="text-xs text-text-secondary leading-relaxed">
+          تمام نرم‌افزارهای مورد نیاز ادیتورها، قالب‌ها، کیت‌های آماده و اسکریپت‌های تبدیل به حجم ۱.۲ گیگابایت.
+        </p>
+      </div>
+
+      <div class="glass-card rounded-xl p-5 border border-white/10">
+        <span class="material-symbols-outlined text-tertiary text-3xl mb-2">support_agent</span>
+        <h3 class="text-base font-bold text-white mb-1">پشتیبانی اختصاصی</h3>
+        <p class="text-xs text-text-secondary leading-relaxed">
+          امکان ارسال سوالات و راهنمایی مستقیم با مدرس دوره در بخش پیام‌های پنل کاربری.
+        </p>
+      </div>
+    </section>
+
+    <!-- What you will learn -->
+    <section class="glass-panel rounded-2xl p-6 sm:p-8 border border-white/10">
+      <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary">menu_book</span>
+        سرفصل‌های آموزشی در این ویدیوی کامل
+      </h2>
+
+      <div class="space-y-3.5">
+        <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex items-start gap-3.5">
+          <span class="w-7 h-7 rounded-lg bg-primary/15 text-primary text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">۱</span>
+          <div>
+            <h4 class="text-sm font-bold text-white mb-1">استخراج و دیکامپایل فایل APK و دیتای OBB</h4>
+            <p class="text-xs text-text-secondary leading-relaxed">آشنایی با ساختار فایل‌های DLS 2019 و نحوه باز کردن امن فایل‌های سیستمی و فشرده بازی بدون خطا.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex items-start gap-3.5">
+          <span class="w-7 h-7 rounded-lg bg-primary/15 text-primary text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">۲</span>
+          <div>
+            <h4 class="text-sm font-bold text-white mb-1">طراحی و جایگزینی کیت‌ها، لوگوها و چهره بازیکنان</h4>
+            <p class="text-xs text-text-secondary leading-relaxed">نحوه ویرایش تکسچرهای ۳ بعدی، تغییر لباس تیم‌های جدید فصل، درج لوگوهای باکیفیت و سفارشی‌سازی ظاهر بازیکنان.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex items-start gap-3.5">
+          <span class="w-7 h-7 rounded-lg bg-primary/15 text-primary text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">۳</span>
+          <div>
+            <h4 class="text-sm font-bold text-white mb-1">تغییر محیط استادیوم، دکمه‌ها و منوهای بازی (UI/UX)</h4>
+            <p class="text-xs text-text-secondary leading-relaxed">تعویض پس‌زمینه‌ها، آیکون‌ها، چمن ورزشگاه، بیلبوردهای تبلیغاتی و تم رنگی صفحه اصلی بازی.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-surface-container-low border border-white/5 flex items-start gap-3.5">
+          <span class="w-7 h-7 rounded-lg bg-primary/15 text-primary text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">۴</span>
+          <div>
+            <h4 class="text-sm font-bold text-white mb-1">کامپایل نهایی، امضای دیجیتال (Sign APK) و تست اجرا</h4>
+            <p class="text-xs text-text-secondary leading-relaxed">بستن فایل APK، امضای صحیح جهت نصب آسان روی تمامی نسخه‌های اندروید بدون کرش یا خطای لایسنس.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <span class="text-xs text-text-muted">هزینه کامل دوره و ابزارها:</span>
+          <div class="text-xl font-bold text-primary">۴۰۰,۰۰۰ تومان</div>
+        </div>
+        <a href="register.html" class="btn-primary w-full sm:w-auto px-8 py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
+          <span>خرید و دسترسی فوری</span>
+          <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full relative bg-obsidian-surface/95 backdrop-blur-lg border-t border-white/10 flex flex-col items-center gap-4 py-8 px-4 text-center">
+    <div class="text-xl font-bold tracking-tight text-primary">AGEDITION</div>
+    <div class="text-xs text-[#6F7C74]">
+      © 2024 AGEDITION. تمامی حقوق متعلق به آکادمی تخصصی AGEDITION است.
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
